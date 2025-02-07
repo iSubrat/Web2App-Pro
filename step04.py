@@ -193,7 +193,7 @@ if __name__ == "__main__":
     # Execute the query
     execute_query(host, username, password, database, query)
     
-    url = "http://server.appcollection.in/delete.php"
+    url = "http://server.appcollection.in/pro_delete.php"
     response = requests.get(url)
     if response.status_code == 200:
         print("Request was successful!")
