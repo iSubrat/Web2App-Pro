@@ -202,7 +202,7 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo, publishe
             "enable_logo": "true",
             "enable_background": "true",
             "splash_logo_url": app_logo,
-            "splash_background_url": "https://web2app-pro.appcollection.in/V01/uploads/splash_background.png"
+            "splash_background_url": "https://web2app-pro.appcollection.in/V01/uploads/splash_background_black.png"
             },
             "exitpopup_configuration": {
                 "title": "Do you want to exit app?",
@@ -224,7 +224,7 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo, publishe
                 "title": "Create Your App",
                 "image": "https://published.appcollection.in/upload/tabs/web2app.png",
                 "url": "https://web2app.appcollection.in/web2app_promo.html",
-                "status": "1"
+                "status": "0"
               }
             ]
         }, indent=4)
