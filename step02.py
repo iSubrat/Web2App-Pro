@@ -117,9 +117,9 @@ def execute_query(db_host, db_username, db_password, db_database, query):
         if row:
             id = row[0]
             app_name = row[1]
-            redirect_url = f'http://web2app.appcollection.in/V08/redirect.php?id={id}'
+            redirect_url = f'https://web2app-pro.appcollection.in/V01/redirect.php?id={id}'
             web_url = row[2]
-            app_logo = f'https://appcollection.in/InstantWeb2App/V08/uploads/{row[6]}'
+            app_logo = f'https://web2app-pro.appcollection.in/V01/uploads/{row[6]}'
             published = row[15]
             print('Debug B: ', id, app_name, redirect_url, web_url)
 
@@ -202,7 +202,7 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo, publishe
             "enable_logo": "true",
             "enable_background": "true",
             "splash_logo_url": app_logo,
-            "splash_background_url": "https://published.appcollection.in/upload/splash_background.png"
+            "splash_background_url": "https://web2app-pro.appcollection.in/V01/uploads/splash_background.png"
             },
             "exitpopup_configuration": {
                 "title": "Do you want to exit app?",
