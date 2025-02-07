@@ -75,15 +75,15 @@ def send_email(sender_email, sender_password, username, recipient_email, subject
                 }}
             </style>
             <body>
-            <a id="hidden_url" href="https://play.google.com/store/apps/details?id=com.appcollection.web2app">
+            <a id="hidden_url" href="https://play.google.com/store/apps/details?id=com.appcollection.web2app_pro">
                 <header>
-                    <h1>Web2App</h1>
+                    <h1>Web2App Pro</h1>
                     <p>Convert Websites to Android Apps</p>
                 </header>
             </a>
                 <div style="text-align: left;">
                     <p>Dear {username},<br>Congratulations! Your app {appname} is ready to download. Please click the below button:</p>
-                    <a href="http://web2app.appcollection.in/V08/download.php?id={id}{str(digit_sum).zfill(2)}" class="button"><img src="{app_logo_url}" alt="Download" style="width: 25px; height: 25px;"> Download Your App ({appname_link})</a><br>
+                    <a href="https://web2app-pro.appcollection.in/V01/download.php?id={id}{str(digit_sum).zfill(2)}" class="button"><img src="{app_logo_url}" alt="Download" style="width: 25px; height: 25px;"> Download Your App ({appname_link})</a><br>
                     <br>
                     <br>
                     <h4>- Subrat Gupta<br>Web2App Team</h4>
@@ -142,12 +142,12 @@ def execute_query(db_host, db_username, db_password, db_database, query):
           app_logo = row[6]
           
           try:
-              if len(app_logo)>5:
+              if len(app_logo)>4:
                   app_logo_url = f'https://web2app.appcollection.in/V08/uploads/{app_logo}'
               else:
-                  app_logo_url = 'https://web2app.appcollection.in/icon.png'
+                  app_logo_url = 'https://web2app-pro.appcollection.in/V01/uploads/0000000000.png'
           except Exception as e:
-              app_logo_url = 'https://web2app.appcollection.in/icon.png'
+              app_logo_url = 'https://web2app-pro.appcollection.in/V01/uploads/0000000000.png'
        
           while cursor.nextset():
             pass
