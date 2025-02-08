@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - aab_trigger.txt
+      - app_id.txt
 
 jobs:
   update_files:
