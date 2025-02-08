@@ -36,8 +36,8 @@ def execute_query(db_host, db_username, db_password, db_database, query):
           host = os.environ['FTP_SERVER']
           username = os.environ['FTP_USERNAME']
           password = os.environ['FTP_PASSWORD']
-          old_name = 'app-release.apk'
-          new_name = appname
+          old_name = 'downloads/app-release.apk'
+          new_name = 'downloads/'+appname
           
           rename_ftp_file(host, username, password, old_name, new_name)
           while cursor.nextset():
