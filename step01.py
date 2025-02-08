@@ -181,7 +181,7 @@ if __name__ == "__main__":
 
       download_image('https://web2app-pro.appcollection.in/V01/uploads/0000000000.png', 'ic_launcher.png')
       try:
-          if len(app_logo_name)>5:
+          if len(app_logo_name)>4:
               print(f'downloading {app_logo_name} file.')
               download_image('https://web2app-pro.appcollection.in/V01/uploads/'+app_logo_name, 'ic_launcher.png')
               print(f'Custom logo downloaded.')
