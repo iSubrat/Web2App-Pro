@@ -119,8 +119,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             app_name = row[1]
             redirect_url = f'https://web2app-pro.appcollection.in/V01/redirect.php?id={id}'
             web_url = row[2]
-            app_logo = f'https://web2app-pro.appcollection.in/V01/uploads/{row[6]}'
-            published = row[15]
+            app_logo = f'https://web2app-pro.appcollection.in/V01/uploads/{row[7]}'
             print('Debug B: ', id, app_name, redirect_url, web_url)
 
             while cursor.nextset():
@@ -144,90 +143,87 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo, publishe
     # urls = popular_urls(web_url, openai_api_key)
     # print('Debug C: ', urls)
     
-    if published=='PUBLISHED':
-        content = None
-    else:
-        content = json.dumps({
-            "appconfiguration": {
-                "app_name": app_name,
-                "url": redirect_url,
-                "appLanguage": "en",
-                "isJavascriptEnable": "true",
-                "isSplashScreen": "true",
-                "isZoomFunctionality": "false",
-                "navigationStyle": "sidedrawer_tabs",
-                "header_style": "left",
-                "is_walkthrough": "false",
-                "is_webrtc": "true",
-                "is_floating_button": "false",
-                "floating_button_style": "regular",
-                "is_pull_refresh": "true",
-                "tab_style": "tab_with_title_icon",
-                "bottom_navigation": "bottom_navigation_3",
-                "walkthrough_style": "walkthrough_style_3",
-                "clear_cookie": "false",
-                "isExitPopupScreen": "true",
-                "disable_header": "false",
-                "disable_footer": "false",
-                "app_logo": app_logo,
-                "floating_button": ""
-            },
-            "admob": {
-                "ads_type": "none",
-                "admobBannerID": "",
-                "admobIntentialID": "",
-                "admobBannerIDIOS": "",
-                "admobIntentialIDIOS": "",
-                "facebookBannerID": "",
-                "facebookIntentialID": "",
-                "facebookBannerIDIOS": "",
-                "facebookIntentialIDIOS": ""
-            },
-            "progressbar": {
-                "is_progressbar": "true",
-                "loaderStyle": "FadingCircle"
-            },
-            "theme": {
-                "themeStyle": "Custom",
-                "customColor": "#000000",
-                "gradientColor1": None,
-                "gradientColor2": None
-            },
-            "splash_configuration": {
-            "first_color": "#000000",
-            "second_color": "#000000",
-            "title": app_name,
-            "enable_title": "true",
-            "title_color": "#ffffff",
-            "enable_logo": "true",
-            "enable_background": "true",
-            "splash_logo_url": app_logo,
-            "splash_background_url": "https://web2app-pro.appcollection.in/V01/uploads/splash_background_black.png"
-            },
-            "exitpopup_configuration": {
-                "title": "Do you want to exit app?",
-                "positive_text": "Yes",
-                "negative_text": "No",
-                "enable_image": "false",
-                "exit_image_url": ""
-            },
-            "user_agent": [{
-                "id": "1",
-                "title": "Safari Mac M1",
-                "android": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36",
-                "ios": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15",
-                "status": "1"
-            }],
-            "pages": [
-              {
-                "id": "1",
-                "title": "Create Your App",
-                "image": "https://published.appcollection.in/upload/tabs/web2app.png",
-                "url": "https://web2app.appcollection.in/web2app_promo.html",
-                "status": "0"
-              }
-            ]
-        }, indent=4)
+    content = json.dumps({
+        "appconfiguration": {
+            "app_name": app_name,
+            "url": redirect_url,
+            "appLanguage": "en",
+            "isJavascriptEnable": "true",
+            "isSplashScreen": "true",
+            "isZoomFunctionality": "false",
+            "navigationStyle": "sidedrawer_tabs",
+            "header_style": "left",
+            "is_walkthrough": "false",
+            "is_webrtc": "true",
+            "is_floating_button": "false",
+            "floating_button_style": "regular",
+            "is_pull_refresh": "true",
+            "tab_style": "tab_with_title_icon",
+            "bottom_navigation": "bottom_navigation_3",
+            "walkthrough_style": "walkthrough_style_3",
+            "clear_cookie": "false",
+            "isExitPopupScreen": "true",
+            "disable_header": "false",
+            "disable_footer": "false",
+            "app_logo": app_logo,
+            "floating_button": ""
+        },
+        "admob": {
+            "ads_type": "none",
+            "admobBannerID": "",
+            "admobIntentialID": "",
+            "admobBannerIDIOS": "",
+            "admobIntentialIDIOS": "",
+            "facebookBannerID": "",
+            "facebookIntentialID": "",
+            "facebookBannerIDIOS": "",
+            "facebookIntentialIDIOS": ""
+        },
+        "progressbar": {
+            "is_progressbar": "true",
+            "loaderStyle": "FadingCircle"
+        },
+        "theme": {
+            "themeStyle": "Custom",
+            "customColor": "#000000",
+            "gradientColor1": None,
+            "gradientColor2": None
+        },
+        "splash_configuration": {
+        "first_color": "#000000",
+        "second_color": "#000000",
+        "title": app_name,
+        "enable_title": "true",
+        "title_color": "#ffffff",
+        "enable_logo": "true",
+        "enable_background": "true",
+        "splash_logo_url": app_logo,
+        "splash_background_url": "https://web2app-pro.appcollection.in/V01/uploads/splash_background_black.png"
+        },
+        "exitpopup_configuration": {
+            "title": "Do you want to exit app?",
+            "positive_text": "Yes",
+            "negative_text": "No",
+            "enable_image": "false",
+            "exit_image_url": ""
+        },
+        "user_agent": [{
+            "id": "1",
+            "title": "Safari Mac M1",
+            "android": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36",
+            "ios": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15",
+            "status": "1"
+        }],
+        "pages": [
+          {
+            "id": "1",
+            "title": "Create Your App",
+            "image": "https://published.appcollection.in/upload/tabs/web2app.png",
+            "url": "https://web2app.appcollection.in/web2app_promo.html",
+            "status": "0"
+          }
+        ]
+    }, indent=4)
     return content
 
 def upload_to_ftp(ftp_host, ftp_username, ftp_password, filename, content, id):
@@ -235,7 +231,7 @@ def upload_to_ftp(ftp_host, ftp_username, ftp_password, filename, content, id):
         ftp.login(ftp_username, ftp_password)
         
         # Prepare the directory path
-        directory = f'01_Profiles/{id}/upload'
+        directory = f'profiles/{id}/upload'
         
         # Attempt to create and navigate to each part of the path
         try:
