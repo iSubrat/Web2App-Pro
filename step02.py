@@ -124,7 +124,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
 
             while cursor.nextset():
                 pass
-            content = create_app_configuration(app_name, redirect_url, web_url, app_logo, published)
+            content = create_app_configuration(app_name, redirect_url, web_url, app_logo)
             filename = "mightyweb.json"
             if content != None:
                 upload_to_ftp(ftp_host, ftp_username, ftp_password, filename, content, id)
@@ -139,7 +139,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
         print("Error executing query:", e)
 
 
-def create_app_configuration(app_name, redirect_url, web_url, app_logo, published):
+def create_app_configuration(app_name, redirect_url, web_url, app_logo):
     # urls = popular_urls(web_url, openai_api_key)
     # print('Debug C: ', urls)
     
