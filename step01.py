@@ -88,7 +88,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             new_text = [
                 f'        android:label="{app_name.replace("&", "&amp;")}"\n',
                 f'            android:value="{admob_app_id}" />\n',
-                f'const BASE_URL = "https://web2app.appcollection.in/downloads/01_Profiles/{id}";\n',
+                f'const BASE_URL = "https://web2app-pro.appcollection.in/profiles/{id}";\n',
                 f'        applicationId "{package_name}"\n',
                 f'          "package_name": "{package_name}"\n'
             ]
