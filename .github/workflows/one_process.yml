@@ -81,7 +81,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         commands: |
           put ./build/app/outputs/flutter-apk/ ./downloads/
-          delete app-release.apk.sha1
+          delete ./downloads/app-release.apk.sha1
           
     - name: Run script to upload JSON
       run: python step02.py
