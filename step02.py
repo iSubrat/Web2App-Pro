@@ -186,8 +186,8 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo):
         "theme": {
             "themeStyle": "Custom",
             "customColor": "#000000",
-            "gradientColor1": None,
-            "gradientColor2": None
+            "gradientColor1": "",
+            "gradientColor2": ""
         },
         "splash_configuration": {
         "first_color": "#000000",
