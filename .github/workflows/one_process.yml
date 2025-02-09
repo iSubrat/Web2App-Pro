@@ -70,7 +70,7 @@ jobs:
         flutter clean
         flutter pub get
         flutter build apk --release
-
+        flutter build aab
 
     - name: FTP Transfer
       uses: joutvhu/ftp-transfer@v1
@@ -81,6 +81,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         commands: |
           put ./build/app/outputs/flutter-apk/ ./downloads/
+          put ./build/app/outputs/bundle/release/ ./downloads/
           delete ./downloads/app-release.apk.sha1
           
     - name: Run script to upload JSON
