@@ -31,12 +31,12 @@ def execute_query(db_host, db_username, db_password, db_database, query):
         if row:
           id = row[0]
           pattern = re.compile(r'[^a-zA-Z0-9_]')
-          appname = str(id).zfill(4) + '_' + pattern.sub('', row[1]) + '.apk'
+          appname = str(id).zfill(4) + '_' + pattern.sub('', row[1])
 
           host = os.environ['FTP_SERVER']
           username = os.environ['FTP_USERNAME']
           password = os.environ['FTP_PASSWORD']
-          old_name = 'downloads/app-release.apk'
+          old_name = 'downloads/app-release'
           new_name = 'downloads/'+appname
           
           rename_ftp_file(host, username, password, old_name, new_name)
@@ -60,7 +60,8 @@ def rename_ftp_file(host, username, password, old_name, new_name):
             ftp.login(username, password)
 
             # Rename the file
-            ftp.rename(old_name, new_name)
+            ftp.rename(old_name+'.apk', new_name+'.apk')
+            ftp.rename(old_name+'.aab', new_name+'.aab')
             print(f"File '{old_name}' renamed to '{new_name}' successfully.")
 
     except Exception as e:
