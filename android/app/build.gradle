@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xeclorural_app8"
+        applicationId "com.appcollection.xpronouns_cc9"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
