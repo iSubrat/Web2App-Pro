@@ -147,11 +147,11 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo):
         "appconfiguration": {
             "app_name": app_name,
             "url": redirect_url,
-            "appLanguage": "en",
+            "appLanuguage": "en",
             "isJavascriptEnable": "true",
             "isSplashScreen": "true",
             "isZoomFunctionality": "false",
-            "navigationStyle": "sidedrawer_tabs",
+            "navigationStyle": "sidedrawer",
             "header_style": "left",
             "is_walkthrough": "false",
             "is_webrtc": "true",
@@ -181,7 +181,7 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo):
         },
         "progressbar": {
             "is_progressbar": "true",
-            "loaderStyle": "FadingCircle"
+            "loaderStyle": "DoubleBounce"
         },
         "theme": {
             "themeStyle": "Custom",
