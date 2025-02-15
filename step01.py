@@ -60,10 +60,10 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             if len(row[15])<10:
                 admob_app_id = 'ca-app-pub-3940256099942544~3347511713'
             else:
-                admob_app_id = row[14]
+                admob_app_id = row[15]
             if len(package_name)<5:
                 package_name = to_package_name(app_name, id)
-            print(id, app_name, web_url, username, email_address)
+            print(id, app_name, web_url, username, email_address, package_name, admob_app_id)
 
             while cursor.nextset():
                 pass
