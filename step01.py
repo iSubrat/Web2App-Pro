@@ -40,7 +40,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             print("Connected to MySQL database")
 
         # Create a cursor object
-        cursor = connection.cursor()
+        cursor = connection.cursor(cursor_class=mysql.connector.cursor.MySQLCursorDict)
 
         # Execute the query
         cursor.execute(query)
