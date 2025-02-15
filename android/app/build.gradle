@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xip_address_49"
+        applicationId "com.appcollection.xkriptoteam_50"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
