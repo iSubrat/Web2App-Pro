@@ -57,7 +57,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             email_address = row["email_address"]
             app_logo_name = row["app_logo_name"]
             package_name = row["package_name"]
-            if len(row["admob_app_id"])<10:
+            if len(row["admob_app_id"])!=38:
                 admob_app_id = 'ca-app-pub-3940256099942544~3347511713'
             else:
                 admob_app_id = row["admob_app_id"]
