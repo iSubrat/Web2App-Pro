@@ -19,7 +19,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             print("Connected to MySQL database")
 
         # Create a cursor object
-        cursor = connection.cursor()
+        cursor = connection.cursor(cursor_class=mysql.connector.cursor.MySQLCursorDict)
 
         # Execute the query
         cursor.execute(query)
@@ -29,9 +29,9 @@ def execute_query(db_host, db_username, db_password, db_database, query):
 
         # Print the rows
         if row:
-          id = row[0]
+          id = row["id"]
           pattern = re.compile(r'[^a-zA-Z0-9_]')
-          appname = str(id).zfill(4) + '_' + pattern.sub('', row[1])
+          appname = str(id).zfill(4) + '_' + pattern.sub('', row["app_name"])
 
           host = os.environ['FTP_SERVER']
           username = os.environ['FTP_USERNAME']
