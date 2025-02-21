@@ -120,11 +120,13 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             redirect_url = f'https://web2app-pro.appcollection.in/V01/redirect.php?id={id}'
             web_url = row["website_url"]
             app_logo = f'https://web2app-pro.appcollection.in/V01/uploads/{row["app_logo_name"]}'
+            onesignal_app_id = row["onesignal_app_id"]
+            onesignal_rest_api = row["onesignal_rest_api_key"]
             print('Debug B: ', id, app_name, redirect_url, web_url)
 
             while cursor.nextset():
                 pass
-            content = create_app_configuration(app_name, redirect_url, web_url, app_logo)
+            content = create_app_configuration(app_name, redirect_url, web_url, app_logo, onesignal_app_id, onesignal_rest_api)
             filename = "mightyweb.json"
             if content != None:
                 upload_to_ftp(ftp_host, ftp_username, ftp_password, filename, content, id)
@@ -139,7 +141,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
         print("Error executing query:", e)
 
 
-def create_app_configuration(app_name, redirect_url, web_url, app_logo):
+def create_app_configuration(app_name, redirect_url, web_url, app_logo, onesignal_app_id, onesignal_rest_api):
     # urls = popular_urls(web_url, openai_api_key)
     # print('Debug C: ', urls)
     
@@ -190,8 +192,8 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo):
             "gradientColor2": ""
         },
         "onesignal_configuration": {
-            "app_id": "xxxxx",
-            "rest_api_key": "xxxxx"
+            "app_id": onesignal_app_id,
+            "rest_api_key": onesignal_rest_api
         },
         "splash_configuration": {
         "first_color": "#000000",
