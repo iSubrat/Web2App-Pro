@@ -189,6 +189,10 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo):
             "gradientColor1": "",
             "gradientColor2": ""
         },
+        "onesignal_configuration": {
+            "app_id": "xxxxx",
+            "rest_api_key": "xxxxx"
+        },
         "splash_configuration": {
         "first_color": "#000000",
         "second_color": "#000000",
