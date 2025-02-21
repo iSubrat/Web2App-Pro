@@ -6,7 +6,7 @@ const PURCHASE_CODE = '';
 const BASE_URL_OFFLINE = 'https://meetmighty.com/mightyweb-public/view/getjson.php?user=$PURCHASE_CODE';
 
 //preference
-const mOneSignalID = 'YOUR_ONE_SIGNAL_KEY';
+const mOneSignalID = "6d255ada-f069-4a5b-af1f-d3300136da34";
 
 //AdmobId
 const adMobBannerId = "YOUR_ADMOB_BANNER_ID";
