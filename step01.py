@@ -57,6 +57,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
             email_address = row["email_address"]
             app_logo_name = row["app_logo_name"]
             package_name = row["package_name"]
+            onesignal_app_id = row["onesignal_app_id"]
             if len(row["admob_app_id"])!=38:
                 admob_app_id = 'ca-app-pub-3940256099942544~3347511713'
             else:
@@ -74,7 +75,8 @@ def execute_query(db_host, db_username, db_password, db_database, query):
                 "android/app/src/main/AndroidManifest.xml",
                 "lib/utils/constant.dart",
                 "android/app/build.gradle",
-                "android/app/google-services.json"
+                "android/app/google-services.json",
+                "lib/utils/constant.dart"
             ]
             
             find_text = [
@@ -82,7 +84,8 @@ def execute_query(db_host, db_username, db_password, db_database, query):
                 "ca-app-pub",
                 "const BASE_URL =",
                 "applicationId",
-                '"package_name": '
+                '"package_name": ',
+                "const mOneSignalID ="
             ]
             
             new_text = [
@@ -90,7 +93,8 @@ def execute_query(db_host, db_username, db_password, db_database, query):
                 f'            android:value="{admob_app_id}" />\n',
                 f'const BASE_URL = "https://web2app-pro.appcollection.in/profiles/{id}";\n',
                 f'        applicationId "{package_name}"\n',
-                f'          "package_name": "{package_name}"\n'
+                f'          "package_name": "{package_name}"\n',
+                f'const mOneSignalID = "{onesignal_app_id}";\n'
             ]
 
             for fp, ft, nt in zip(file_path, find_text, new_text):
