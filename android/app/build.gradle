@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xcarfax93"
+        applicationId "com.appcollection.xsicofi_facturas_antiguas94"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
