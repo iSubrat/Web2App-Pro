@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsat_factura_digital96"
+        applicationId "com.appcollection.xinfo_priangan_mobile97"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
