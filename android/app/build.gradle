@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsarim_electronics_144"
+        applicationId "com.appcollection.xaes_tours145"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
