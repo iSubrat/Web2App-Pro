@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "cmus.pm.se"
+        applicationId "com.appcollection.xlflix_doramas_149"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
