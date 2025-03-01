@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsoap2day34"
+        applicationId "com.appcollection.xgk_short_notes37"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
