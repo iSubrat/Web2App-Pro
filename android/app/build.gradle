@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xbaofeng30001"
+        applicationId "com.appcollection.xtalk_legal_beta_30002"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
