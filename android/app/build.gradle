@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.tokopaneldila.cfxcloud"
+        applicationId "com.appcollection.xtennis_base_42"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
