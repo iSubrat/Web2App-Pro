@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsnake_2d_io30045"
+        applicationId "com.appcollection.xarti_tiwari_30046"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
