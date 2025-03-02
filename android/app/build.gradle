@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xlogin_panel_by_lannv1_30040"
+        applicationId "com.appcollection.xaugenzentrum_hb_28"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
