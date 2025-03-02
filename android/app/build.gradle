@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xaugenzentrum_hb_28"
+        applicationId "com.appcollection.xvbank30"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
