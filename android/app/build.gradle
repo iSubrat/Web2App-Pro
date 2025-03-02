@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xkham30022"
+        applicationId "com.appcollection.xmaster_pes_app30023"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
