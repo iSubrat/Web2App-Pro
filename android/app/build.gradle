@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xnot_diamond30056"
+        applicationId "com.appcollection.xmk_pro_service_30057"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
