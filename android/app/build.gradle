@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmaster_pes_app30023"
+        applicationId "com.appcollection.xmystique_mountain_adventure30024"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
