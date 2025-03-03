@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xpi_network_doubler_software30113"
+        applicationId "com.appcollection.xchat168"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
