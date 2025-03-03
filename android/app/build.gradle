@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "tinkuwebtoapps.apk"
+        applicationId "com.appcollection.xpi_network_doubler_software30110"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
