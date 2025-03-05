@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xyashraj_intelligence_30189"
+        applicationId "com.appcollection.xyashraj_intelligence_30190"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
