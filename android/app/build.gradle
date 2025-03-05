@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.apk.gm"
+        applicationId "com.appcollection.xmgshot30169"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
