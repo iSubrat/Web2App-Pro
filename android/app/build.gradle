@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xcandy_delivered_182"
+        applicationId "com.appcollection.xclickin_it_candy_183"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
