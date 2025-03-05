@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xshaw_trust_portal191"
+        applicationId "com.appcollection.xpc_gamer193"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
