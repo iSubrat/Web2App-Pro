@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmgshot30169"
+        applicationId "com.appcollection.xpi_network_software_doubler30170"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
