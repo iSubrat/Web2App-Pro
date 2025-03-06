@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xadvance_picking_waitrose30203"
+        applicationId "com.appcollection.xmangoanimate30204"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
