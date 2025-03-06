@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xb_o_qu_n_i_nh_n_d_n_30252"
+        applicationId "com.app.kinoger"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
