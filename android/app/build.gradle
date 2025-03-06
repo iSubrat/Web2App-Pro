@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xth_o_30231"
+        applicationId "com.appcollection.xxbox_cloud_gaming30233"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
