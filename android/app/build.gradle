@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.arunapplication.bappam"
+        applicationId "com.appcollection.xtranslator_30219"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
