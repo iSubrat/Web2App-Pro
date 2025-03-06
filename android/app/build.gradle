@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xharshit_vs_harsa_the_roast_saga_30235"
+        applicationId "com.appcollection.xmyperson8_talker30236"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
