@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kanaeruspace.riefkanaeru"
+        applicationId "com.appcollection.xelectronic_plus_30260"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
