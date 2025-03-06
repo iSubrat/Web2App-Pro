@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ypikhaira.app"
+        applicationId "com.appcollection.xharshit_vs_harsa_the_roast_saga_30235"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
