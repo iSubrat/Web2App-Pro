@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xbrainstorm_classes_30300"
+        applicationId "com.appcollection.xvaleminer214"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
