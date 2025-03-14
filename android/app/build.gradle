@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.naruya.izumi.pv"
+        applicationId "com.appcollection.xampere246"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
