@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xe_sukoanyar254"
+        applicationId "com.appcollection.xmandm_direct_255"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
