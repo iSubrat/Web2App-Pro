@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xr_v_mcq_portal_243"
+        applicationId "com.naruyaizumi.panel"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
