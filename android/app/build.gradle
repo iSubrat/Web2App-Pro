@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsipams_sukotirto252"
+        applicationId "com.appcollection.xparking_sukomaju253"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
