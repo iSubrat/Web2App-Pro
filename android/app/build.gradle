@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmediavip_in265"
+        applicationId "cc.rstx.git"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
