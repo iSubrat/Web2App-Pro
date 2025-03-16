@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xantargaz264"
+        applicationId "com.appcollection.xmediavip_in265"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
