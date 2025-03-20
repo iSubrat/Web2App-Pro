@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xp2v_crackers77"
+        applicationId "com.appcollection.xbilling277"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
