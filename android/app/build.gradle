@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xalton_towers_resort_queue_times_279"
+        applicationId "com.procv"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
