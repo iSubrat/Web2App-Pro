@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xpiosenka_dla_ciebie108"
+        applicationId "com.takaverse.private"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
