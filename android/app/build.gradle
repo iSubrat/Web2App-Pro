@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xchat_youtube291"
+        applicationId "com.appcollection.xcontent_planner_292"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
