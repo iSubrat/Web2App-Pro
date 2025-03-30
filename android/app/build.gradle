@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xuniversal_credit308"
+        applicationId "com.appcollection.xmeraki_s_content_creator_hub309"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
