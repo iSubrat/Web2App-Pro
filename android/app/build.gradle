@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ConectaConalep.com.mx"
+        applicationId "com.appcollection.xtower_of_trials335"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
