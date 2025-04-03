@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.nadia.izumi.privatserver"
+        applicationId "com.appcollection.x70win160"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
