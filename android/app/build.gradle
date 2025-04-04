@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xlinsenmax339"
+        applicationId "com.appcollection.x_177"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
