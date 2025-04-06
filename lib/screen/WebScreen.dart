@@ -234,7 +234,7 @@ class WebScreenState extends State<WebScreen> {
                     url.contains("mailto:") ||
                     url.contains("tel:") ||
                     url.contains("share=telegram") ||
-                    url.contains("pay?pa=upi") ||
+                    url.contains("pay?") ||
                     url.contains("messenger.com")) {
                   url = Uri.encodeFull(url);
                   try {
