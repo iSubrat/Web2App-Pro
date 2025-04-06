@@ -168,6 +168,7 @@ const SPLASH_ENABLE_BACKGROUND = 'enable_background';
 const SPLASH_LOGO_URL = 'splash_logo_url';
 const SPLASH_TITLE_COLOR = 'title_color';
 const SPLASH_BACKGROUND_URL = 'splash_background_url';
+const EXTERNAL_URLS = 'external_urls';
 
 const EXIST_ICON = 'exit_image_url';
 const EXIST_TITLE = 'EXIST_TITLE';
