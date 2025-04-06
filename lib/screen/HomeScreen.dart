@@ -252,6 +252,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     return NavigationActionPolicy.CANCEL;
                   }
                 } else if (url.contains("linkedin.com") ||
+                    url.contains("upi://") ||
                     url.contains("market://") ||
                     url.contains("whatsapp://") ||
                     url.contains("truecaller://") ||
