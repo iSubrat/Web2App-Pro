@@ -264,7 +264,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     url.contains("mailto:") ||
                     url.contains("tel:") ||
                     url.contains("share=telegram") ||
-                    url.contains("pay?pa=upi") ||
+                    url.contains("pay?") ||
                     url.contains("messenger.com")) {
                   if (url.contains("https://api.whatsapp.com/send?phone=+")) {
                     url = url.replaceAll("https://api.whatsapp.com/send?phone=+", "https://api.whatsapp.com/send?phone=");
