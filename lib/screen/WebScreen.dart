@@ -54,6 +54,7 @@ class WebScreenState extends State<WebScreen> {
   @override
   void initState() {
     super.initState();
+    fetchExternalSchemes(); // 👈 Fetch list from JSON
     init();
   }
 
@@ -85,6 +86,22 @@ class WebScreenState extends State<WebScreen> {
       }
     });
     setState(() {});
+  }
+
+  List<String> externalSchemesOrDomains = [];
+  Future<void> fetchExternalSchemes() async {
+    try {
+      final response = await HttpClient().getUrl(Uri.parse(BASE_URL+'/upload/mightyweb.json'));
+      final result = await response.close();
+      final responseBody = await result.transform(utf8.decoder).join();
+  
+      final data = jsonDecode(responseBody);
+      setState(() {
+        externalSchemesOrDomains = List<String>.from(data['externalSchemesOrDomains']);
+      });
+    } catch (e) {
+      print("Error fetching schemes: $e");
+    }
   }
 
   Future<bool> checkPermission() async {
@@ -205,7 +222,7 @@ class WebScreenState extends State<WebScreen> {
               shouldOverrideUrlLoading: (controller, navigationAction) async {
                 var uri = navigationAction.request.url;
                 var url = navigationAction.request.url.toString();
-                final List<String> externalSchemesOrDomains = ["linkedin.com", "upi://", "market://", "whatsapp://", "truecaller://", "facebook.com", "twitter.com", "youtube.com", "pinterest.com", "snapchat.com", "instagram.com", "play.google.com", "mailto:", "tel:", "share=telegram", "pay?", "messenger.com", "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount", ];
+                // final List<String> externalSchemesOrDomains = ["linkedin.com", "upi://", "market://", "whatsapp://", "truecaller://", "facebook.com", "twitter.com", "youtube.com", "pinterest.com", "snapchat.com", "instagram.com", "play.google.com", "mailto:", "tel:", "share=telegram", "pay?", "messenger.com", "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount", ];
                 log("URL" + url.toString());
 
                 if (Platform.isAndroid && url.contains("intent")) {
