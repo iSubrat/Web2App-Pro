@@ -237,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               shouldOverrideUrlLoading: (controller, navigationAction) async {
                 var uri = navigationAction.request.url;
                 var url = navigationAction.request.url.toString();
-                final List<String> externalSchemesOrDomains = ["linkedin.com", "upi://", "market://", "whatsapp://", "truecaller://", "facebook.com", "twitter.com", "youtube.com", "pinterest.com", "snapchat.com", "instagram.com", "play.google.com", "mailto:", "tel:", "share=telegram", "pay?", "messenger.com", ];
+                final List<String> externalSchemesOrDomains = ["linkedin.com", "upi://", "market://", "whatsapp://", "truecaller://", "facebook.com", "twitter.com", "youtube.com", "pinterest.com", "snapchat.com", "instagram.com", "play.google.com", "mailto:", "tel:", "share=telegram", "pay?", "messenger.com", "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount", ];
                 log("URL->" + url.toString());
 
                 if (Platform.isAndroid && url.contains("intent")) {
