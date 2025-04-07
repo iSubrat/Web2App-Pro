@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xfacturas361"
+        applicationId "Indahbiak.wuaze.com"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
