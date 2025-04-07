@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kanna.insta"
+        applicationId "com.appcollection.xfacturas371"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
