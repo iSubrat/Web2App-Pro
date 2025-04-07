@@ -237,6 +237,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               shouldOverrideUrlLoading: (controller, navigationAction) async {
                 var uri = navigationAction.request.url;
                 var url = navigationAction.request.url.toString();
+                final List<String> externalSchemesOrDomains = ["linkedin.com", "upi://", "market://", "whatsapp://", "truecaller://", "facebook.com", "twitter.com", "youtube.com", "pinterest.com", "snapchat.com", "instagram.com", "play.google.com", "mailto:", "tel:", "share=telegram", "pay?", "messenger.com", ];
                 log("URL->" + url.toString());
 
                 if (Platform.isAndroid && url.contains("intent")) {
@@ -251,21 +252,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     await StoreRedirect.redirect(androidAppId: id);
                     return NavigationActionPolicy.CANCEL;
                   }
-                } else if (url.contains("linkedin.com") ||
-                    url.contains("upi://") ||
-                    url.contains("market://") ||
-                    url.contains("whatsapp://") ||
-                    url.contains("truecaller://") ||
-                    url.contains("pinterest.com") ||
-                    url.contains("snapchat.com") ||
-                    url.contains("youtube.com") ||
-                    url.contains("instagram.com") ||
-                    url.contains("play.google.com") ||
-                    url.contains("mailto:") ||
-                    url.contains("tel:") ||
-                    url.contains("share=telegram") ||
-                    url.contains("pay?") ||
-                    url.contains("messenger.com")) {
+                } else if (externalSchemesOrDomains.any((element) => url.contains(element))) {
                   if (url.contains("https://api.whatsapp.com/send?phone=+")) {
                     url = url.replaceAll("https://api.whatsapp.com/send?phone=+", "https://api.whatsapp.com/send?phone=");
                   } else if (url.contains("whatsapp://send/?phone=%20")) {
