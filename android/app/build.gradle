@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xskill_macha341"
+        applicationId "com.kanna.insta"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
