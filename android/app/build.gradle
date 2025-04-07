@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.x_372"
+        applicationId "com.wnapp.id1678463967259"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
