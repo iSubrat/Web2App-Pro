@@ -170,6 +170,26 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo, onesigna
             "app_logo": app_logo,
             "floating_button": ""
         },
+        "externalSchemesOrDomains": [
+            "linkedin.com",
+            "upi://",
+            "market://",
+            "whatsapp://",
+            "truecaller://",
+            "facebook.com",
+            "twitter.com",
+            "youtube.com",
+            "pinterest.com",
+            "snapchat.com",
+            "instagram.com",
+            "play.google.com",
+            "mailto:",
+            "tel:",
+            "share=telegram",
+            "pay?",
+            "messenger.com",
+            "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount"
+        ],
         "admob": {
             "ads_type": "none",
             "admobBannerID": "",
