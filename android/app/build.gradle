@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xhakunas_bundesliga_tipp_spiel_378"
+        applicationId "com.appcollection.xrbm_journaling_214"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
