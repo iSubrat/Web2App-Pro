@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xcoleta_de_dados_awl388"
+        applicationId "com.appcollection.xpresensi_xi_mipa_2389"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
