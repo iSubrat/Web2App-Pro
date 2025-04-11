@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xpeace_mobile_jigjiga_397"
+        applicationId "NV.app.1"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
