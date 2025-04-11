@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "NV.app.1"
+        applicationId "com.appcollection.xa_g_ore_cantiere_399"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
