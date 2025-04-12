@@ -98,7 +98,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
                 f'            android:value="{admob_app_id}" />\n',
                 f'const BASE_URL = "https://web2app-pro.appcollection.in/profiles/{id}";\n',
                 f'        applicationId "{package_name}"\n',
-                f'        versionCode "{version_code}"\n',
+                f'        versionCode {version_code}\n',
                 f'        versionName "1.0.{version_code}"\n',
                 f'          "package_name": "{package_name}"\n',
                 f'const mOneSignalID = "{onesignal_app_id}";\n'
