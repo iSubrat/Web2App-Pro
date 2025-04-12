@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmake_travel_easy_13300"
+        applicationId "com.versioncode.app"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 5
+        versionName "1.0.5"
         multiDexEnabled true
     }
 
