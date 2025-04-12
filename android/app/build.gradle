@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsocial_media_pay_per_call_platform_411"
+        applicationId "com.appcollection.xlovable_dev412"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
