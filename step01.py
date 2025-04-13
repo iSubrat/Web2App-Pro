@@ -106,38 +106,10 @@ def execute_query(db_host, db_username, db_password, db_database, query):
 
             for fp, ft, nt in zip(file_path, find_text, new_text):
                 replace_text_in_file(fp, ft, nt)
-
-            OWNER = 'iSubrat'
-            REPO = 'Web2App-Pro'
-            GITHUB_TOKEN = os.getenv("")            
-            url = f"https://api.github.com/repos/{OWNER}/{REPO}/actions/runs"
-            workflow_id = None
-            
-            # Set up headers
-            headers = {
-                "Accept": "application/vnd.github.v3+json",
-            }
-            if GITHUB_TOKEN:
-                headers["Authorization"] = f"token {GITHUB_TOKEN}"
-            response = requests.get(url, headers=headers)
-            
-            if response.status_code == 200:
-                data = response.json()
-                runs = data.get("workflow_runs", [])
-                if not runs:
-                    print("No workflow runs found for this repository.")
-                else:
-                    workflow_id = runs[0].get("id")
-                    status = runs[0].get("status")
-                    conclusion = runs[0].get("conclusion")
-                    print(f"Workflow '{workflow_id}': status = {status}, conclusion = {conclusion}")
-            else:
-                print(f"Error: Failed to retrieve workflow runs (HTTP {response.status_code}).")
-
             
             # Update the status column to "Updated"
-            update_query = "UPDATE app_data SET status = 'BUILDING', workflow_id = %s, status_updated_at = NOW() WHERE id = %s"
-            cursor.execute(update_query, (workflow_id, id,))
+            update_query = "UPDATE app_data SET status = 'BUILDING', status_updated_at = NOW() WHERE id = %s"
+            cursor.execute(update_query, (id,))
             connection.commit()
             print("Status column updated to 'BUILDING'")
         else:
