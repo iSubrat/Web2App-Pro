@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xtest_app422"
+        applicationId "com.appcollection.xscriptscoded424"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 0
+        versionName "1.0.0"
         multiDexEnabled true
     }
 
