@@ -173,7 +173,6 @@ def create_app_configuration(app_name, redirect_url, web_url, app_logo, onesigna
         "externalSchemesOrDomains": [
             "linkedin.com",
             "upi://",
-            "buy.stripe.com",
             "market://",
             "whatsapp://",
             "truecaller://",
