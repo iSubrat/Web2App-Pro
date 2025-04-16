@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xtest_app433"
+        applicationId "com.appcollection.xps_digital_marketing_agency_434"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
