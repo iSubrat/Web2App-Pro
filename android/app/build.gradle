@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xpoin_layanan_457"
+        applicationId "com.appcollection.x63"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
