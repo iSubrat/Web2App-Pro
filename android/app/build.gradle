@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xlab451"
+        applicationId "com.naruyaizumi.lznycx"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
