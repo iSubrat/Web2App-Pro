@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xuttampdf446"
+        applicationId "binge.flix.tv"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 999
+        versionName "1.0.999"
         multiDexEnabled true
     }
 
