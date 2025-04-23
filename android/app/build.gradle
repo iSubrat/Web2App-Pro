@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xcs_hd482"
+        applicationId "com.appcollection.xwhatsapp_483"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
