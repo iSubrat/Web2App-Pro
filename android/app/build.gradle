@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xriffusion_music_creator_497"
+        applicationId "com.appcollection.xyork_citizens498"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
