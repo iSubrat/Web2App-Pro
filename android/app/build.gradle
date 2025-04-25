@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xhealthy_living_13"
+        applicationId "com.quizora.ai"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 10
+        versionName "1.0.10"
         multiDexEnabled true
     }
 
