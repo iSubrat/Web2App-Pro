@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kelly.com"
+        applicationId "com.atex.ht"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 28
+        versionName "1.0.28"
         multiDexEnabled true
     }
 
