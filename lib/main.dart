@@ -24,6 +24,9 @@ void main() async {
   appStore.setDarkMode(aIsDarkMode: getBoolAsync(isDarkModeOnPref));
   appStore.setLanguage(getStringAsync(APP_LANGUAGE, defaultValue: 'en'));
 
+  final initialStatus = await Connectivity().checkConnectivity();
+  appStore.setConnectionState(initialStatus);
+
   if (isMobile) {
     MobileAds.instance.initialize();
     OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
