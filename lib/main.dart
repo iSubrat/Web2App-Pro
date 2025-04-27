@@ -80,7 +80,8 @@ class _MyAppState extends State<MyApp> {
     return Observer(builder: (context) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: appStore.isNetworkAvailable ? DataScreen() : NoInternetConnection(),
+        home: DataScreen(),
+        // home: appStore.isNetworkAvailable ? DataScreen() : NoInternetConnection(),
         supportedLocales: Language.languagesLocale(),
         navigatorKey: navigatorKey,
         localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
