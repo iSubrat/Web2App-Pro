@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xdlp_newstv_509"
+        applicationId "com.appcollection.xyork_citizens288"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
