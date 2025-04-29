@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.serverprivate.takaverse"
+        applicationId "com.appcollection.xfirst_prime314"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
