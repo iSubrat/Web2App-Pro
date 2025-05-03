@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.akawami.apkalmulk"
+        applicationId "com.lexpressmu.application"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
