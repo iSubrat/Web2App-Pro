@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "Com.raimundo "
+        applicationId "com.appcollection.xraimundo348"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 2025
-        versionName "1.0.2025"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
