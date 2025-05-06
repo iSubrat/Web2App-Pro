@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xgbp_ranking_factors_571"
+        applicationId "com.appcollection.xred_alert_2_572"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
