@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "comel.akawami.myapparabic"
+        applicationId "com.appcollection.xgbp_ranking_factors_570"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
