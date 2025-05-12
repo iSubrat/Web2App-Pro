@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmytapify390"
+        applicationId "com.appcollection.xmytapify398"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
