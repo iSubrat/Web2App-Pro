@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xnavigation579"
+        applicationId "com.aelia.app"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
