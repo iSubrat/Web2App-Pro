@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.aelia.app"
+        applicationId "com.appcollection.xkamla_2_horror_game_580"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
