@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xreal_madrid584"
+        applicationId "com.appcollection.xtic_tac_toe585"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
