@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xchatrapati_digital_379"
+        applicationId "com.appcollection.xaternos_minecraft_server_maker578"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
