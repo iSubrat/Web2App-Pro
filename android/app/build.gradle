@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.deinname.aelia"
+        applicationId "com.appcollection.xaelia363"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
