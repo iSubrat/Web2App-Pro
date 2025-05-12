@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xchatrapati_digital_381"
+        applicationId "com.appcollection.xnavigation579"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
