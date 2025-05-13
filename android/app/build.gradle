@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xtask_complete601"
+        applicationId "com.appcollection.xpede_ai_nordestino_vip409"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
