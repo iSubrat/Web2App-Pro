@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "Mahaan.insaan.shree.vishal"
+        applicationId "com.appcollection.xrestfree625"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
