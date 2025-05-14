@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.shreeshree.eksauaath.proxy"
+        applicationId "com.appcollection.xhsdetection_620"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 21
+        versionName "1.0.21"
         multiDexEnabled true
     }
 
