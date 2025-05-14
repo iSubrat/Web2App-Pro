@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsavickas_education622"
+        applicationId "com.appcollection.xsvs_mobile_gadgets623"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
