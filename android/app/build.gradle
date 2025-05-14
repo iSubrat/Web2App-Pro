@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xbright_education_609"
+        applicationId "comel.akawami.infaqku1"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
