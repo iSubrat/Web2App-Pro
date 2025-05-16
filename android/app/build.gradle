@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xchecklist687"
+        applicationId "com.appcollection.xgiri_media688"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
