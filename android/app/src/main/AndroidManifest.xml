@@ -33,7 +33,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2100342089013833/8607237423" />
+            android:value="ca-app-pub-2100342089013833~5102272536" />
 
         <activity
             android:name="com.mighty.web.MainActivity"
