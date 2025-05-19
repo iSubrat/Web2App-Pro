@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.stalin.salesman"
+        applicationId "com.appcollection.xold_reddit271"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
