@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "srp.megashared.pro"
+        applicationId "com.akawami.motivasiharian"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
