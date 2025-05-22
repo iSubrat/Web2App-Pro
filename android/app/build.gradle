@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsilveira_e_silveira86"
+        applicationId "com.alladmin.live"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
