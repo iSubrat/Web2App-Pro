@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xapi_management_768"
+        applicationId "com.appcollection.xandroid_api_management_769"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
