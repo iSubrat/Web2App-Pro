@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.akawami.myquizv1"
+        applicationId "com.appcollection.xahe_app772"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 200
-        versionName "1.0.200"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
