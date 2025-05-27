@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
-def send_email(sender_email, sender_password, username, recipient_email, subject, id, appname, app_logo_url, appname_link):
+def send_email(sender_email, sender_password, username, recipient_email, subject, id, appname, app_logo_url, appname_link, aabname_link):
     try:
         email_host = os.environ['EMAIL_HOST']
         email_port = os.environ['EMAIL_PORT']
@@ -83,7 +83,9 @@ def send_email(sender_email, sender_password, username, recipient_email, subject
             </a>
                 <div style="text-align: left;">
                     <p>Dear {username},<br>Congratulations! Your app {appname} is ready to download. Please click the below button:</p>
-                    <a href="https://web2app-pro.appcollection.in/V01/download.php?id={id}{str(digit_sum).zfill(2)}" class="button"><img src="{app_logo_url}" alt="Download" style="width: 25px; height: 25px;"> Download Your App ({appname_link})</a><br>
+                    <a href="https://web2app-pro.appcollection.in/V01/download.php?file=apk&id={id}{str(digit_sum).zfill(2)}" class="button"><img src="{app_logo_url}" alt="Download" style="width: 25px; height: 25px;"> Download Your App ({appname_link})</a><br>
+                    <br>
+                    <a href="https://web2app-pro.appcollection.in/V01/download.php?file=aab&id={id}{str(digit_sum).zfill(2)}" class="button"><img src="{app_logo_url}" alt="Download" style="width: 25px; height: 25px;"> Download AAB File ({aabname_link})</a><br>
                     <br>
                     <br>
                     <h4>- Subrat Gupta<br>Web2App Team</h4>
@@ -137,6 +139,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
           appname = row["app_name"]
           pattern = re.compile(r'[^a-zA-Z0-9_]')
           appname_link = str(id).zfill(4) + '_' + pattern.sub('', row["app_name"]) + '.apk'
+          aabname_link = str(id).zfill(4) + '_' + pattern.sub('', row["app_name"]) + '.aab'
           username = row["user_name"]
           recipient_email = row["email_address"]
           app_logo = row["app_logo_name"]
@@ -161,7 +164,7 @@ def execute_query(db_host, db_username, db_password, db_database, query):
           ftp_username = os.environ['FTP_USERNAME']
           ftp_password = os.environ['FTP_PASSWORD']
 
-          send_email(sender_email, sender_password, username, recipient_email, subject, id, appname, app_logo_url, appname_link)
+          send_email(sender_email, sender_password, username, recipient_email, subject, id, appname, app_logo_url, appname_link, aabname_link)
           # send_email(sender_email, sender_password, username, 'isubrat@icloud.com', subject, id, appname, app_logo_url, appname_link)
 
           # Update the status column to "Updated"
