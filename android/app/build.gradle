@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xeyeforge_3_5_792"
+        applicationId "com.appcollection.xeyeforge_793"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
