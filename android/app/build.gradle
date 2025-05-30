@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "hnd.accionjoven.mumi"
+        applicationId "com.appcollection.xpersona_pro513"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 4
-        versionName "1.0.4"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
