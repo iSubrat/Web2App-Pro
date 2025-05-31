@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xbotlibre813"
+        applicationId "com.appcollection.xprojectmanager12"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
