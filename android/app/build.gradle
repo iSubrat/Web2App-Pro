@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xplanet_dust809"
+        applicationId "com.appcollection.xgrime_doctor810"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
