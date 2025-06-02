@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "co.median.android.ozxjpn"
+        applicationId "com.appcollection.xunihertz_shop814"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 4
-        versionName "1.0.4"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
