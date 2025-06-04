@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xok_win824"
+        applicationId "com.appcollection.xword_unscrambler_376"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
