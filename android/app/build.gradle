@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xsun_exch560"
+        applicationId "com.appcollection.xai_chat825"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 6
-        versionName "1.0.6"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
