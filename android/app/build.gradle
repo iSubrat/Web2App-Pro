@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.ftrade.online"
+        applicationId "com.appcollection.xgemini157"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
