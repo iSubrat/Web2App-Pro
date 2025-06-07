@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xambika_exch172"
+        applicationId "com.appcollection.xredecho174"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 9
-        versionName "1.0.9"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
