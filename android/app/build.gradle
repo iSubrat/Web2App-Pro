@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xbdg_win225"
+        applicationId "com.appcollection.xef_serv_236"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
