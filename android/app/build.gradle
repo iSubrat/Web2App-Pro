@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xalton_towers_online_shop_577"
+        applicationId "com.ubed.api"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
