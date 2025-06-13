@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.perchancexxx.yeah"
+        applicationId "com.appcollection.xbdg_win592"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
