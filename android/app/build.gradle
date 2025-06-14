@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xgap_kick596"
+        applicationId "com.appcollection.xspy_kick597"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
