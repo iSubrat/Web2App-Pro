@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xhuggingface600"
+        applicationId "com.appcollection.xstorm_fiber602"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
