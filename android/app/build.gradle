@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "Com.Calc.Buddy"
+        applicationId "com.appcollection.xi_m_kick277"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 7
-        versionName "1.0.7"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
