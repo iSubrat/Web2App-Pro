@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.jellyseerr.myapp"
+        applicationId "com.merefpedia.id"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
