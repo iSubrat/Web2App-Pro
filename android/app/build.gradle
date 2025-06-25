@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.iptorrents.myapp"
+        applicationId "com.rutorrent.myapp"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
