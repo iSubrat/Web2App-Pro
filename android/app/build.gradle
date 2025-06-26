@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xekundayo_educonsult681"
+        applicationId "com.appcollection.xelevate4_ai284"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
