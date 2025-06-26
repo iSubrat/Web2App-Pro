@@ -26,14 +26,14 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="Ultra Violet - URL Security Scanner"
+        android:label="Página Creatorcash Oficial"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2072853354269415/3100009891" />
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <activity
             android:name="com.mighty.web.MainActivity"
