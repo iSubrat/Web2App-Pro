@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xalbert_einstein_708"
+        applicationId "com.giochi24.it"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
