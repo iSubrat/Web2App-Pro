@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.anagrafenazionale.interno.it"
+        applicationId "Com.j.j"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
