@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xamr_2demo496"
+        applicationId "com.appcollection.xcyber_kick559"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
