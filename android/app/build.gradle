@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xekundayo_educonsult728"
+        applicationId "com.appcollection.xelevate4_ai729"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 7
+        versionName "1.0.7"
         multiDexEnabled true
     }
 
