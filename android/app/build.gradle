@@ -14,7 +14,7 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 36
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -27,7 +27,7 @@ android {
     defaultConfig {
         applicationId "com.elo.remaster"
         minSdkVersion 22
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0.1"
         multiDexEnabled true
