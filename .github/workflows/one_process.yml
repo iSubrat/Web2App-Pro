@@ -47,15 +47,19 @@ jobs:
       uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
-        java-version: '11'
+        java-version: '17'
 
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
       with:
         flutter-version: '3.22.2'
 
-    - name: Ensure Android SDK 35 (Flutter way)
-      run: flutter doctor --android-licenses && yes | flutter sdk --install-android-sdk
+    - name: Install Android SDK 35
+      run: |
+        export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+        export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/tools/bin:$PATH"
+        sdkmanager --version
+        yes | sdkmanager "platforms;android-35"
 
     # - name: Install Android Build Tools 35
     #   run: yes | sdkmanager "build-tools;35.0.0"
