@@ -80,6 +80,14 @@ jobs:
         yes | sdkmanager "build-tools;35.0.0"
         ls -l $ANDROID_SDK_ROOT/platforms/android-35
 
+    - name: Debug Show contents of android-35
+      run: |
+        export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+        echo "SDK root: $ANDROID_SDK_ROOT"
+        ls -l $ANDROID_SDK_ROOT/platforms
+        ls -l $ANDROID_SDK_ROOT/platforms/android-35 || echo "android-35 not found"
+        ls -lh $ANDROID_SDK_ROOT/platforms/android-35/android.jar || echo "android.jar not found"
+
         
     - name: Cache Flutter dependencies
       uses: actions/cache@v4
