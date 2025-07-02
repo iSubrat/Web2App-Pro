@@ -54,12 +54,8 @@ jobs:
       with:
         flutter-version: '3.22.2'
 
-    - name: Install Android SDK 35
-      run: |
-        export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
-        export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/tools/bin:$PATH"
-        sdkmanager --version
-        yes | sdkmanager "platforms;android-35"
+    - name: Ensure Android SDK 35 (Flutter way)
+      run: flutter doctor --android-licenses && yes | flutter sdk --install-android-sdk
 
     # - name: Install Android Build Tools 35
     #   run: yes | sdkmanager "build-tools;35.0.0"
