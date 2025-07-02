@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.getmerlin.in"
+        applicationId "com.appcollection.xaimatrix759"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 7
+        versionName "1.0.7"
         multiDexEnabled true
     }
 
