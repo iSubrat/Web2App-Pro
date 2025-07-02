@@ -54,16 +54,33 @@ jobs:
       with:
         flutter-version: '3.22.2'
 
-    - name: Install Android SDK 35 + Tools
+    - name: Remove old/corrupt SDKs (optional but recommended)
       run: |
         export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
-        export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/tools/bin:$PATH"
+        rm -rf $ANDROID_SDK_ROOT/platforms/android-35 || true
+        rm -rf $ANDROID_SDK_ROOT/cmdline-tools/latest || true
+    
+    - name: Install Android cmdline-tools (if missing)
+      run: |
+        export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+        mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
+        cd $ANDROID_SDK_ROOT/cmdline-tools
+        wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O tools.zip
+        unzip tools.zip
+        mv cmdline-tools latest
+        rm tools.zip
+    
+    - name: Install Android SDK 35, build-tools, platform-tools
+      run: |
+        export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+        export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
         yes | sdkmanager --licenses
         yes | sdkmanager "platforms;android-35"
         yes | sdkmanager "platform-tools"
         yes | sdkmanager "build-tools;35.0.0"
         ls -l $ANDROID_SDK_ROOT/platforms/android-35
 
+        
     - name: Cache Flutter dependencies
       uses: actions/cache@v4
       with:
