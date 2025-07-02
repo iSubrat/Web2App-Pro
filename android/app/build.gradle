@@ -14,7 +14,7 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 35
+    compileSdkVersion 34
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.in"
-        minSdkVersion 24
-        targetSdkVersion 35
-        versionCode 2
-        versionName "1.0.2"
+        applicationId "com.appcollection.xfgv717"
+        minSdkVersion 22
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
