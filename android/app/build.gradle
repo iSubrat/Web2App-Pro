@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xhindi_current_affairs_775"
+        applicationId "com.appcollection.xappadmcmus776"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 8
-        versionName "1.0.8"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
