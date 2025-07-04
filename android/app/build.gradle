@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xcartomantes_online_783"
+        applicationId "com.appcollection.xbec_india_790"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
