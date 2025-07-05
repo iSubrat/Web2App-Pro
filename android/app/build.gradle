@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xthronixpro833"
+        applicationId "com.appcollection.xthronixpro_834"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 2
