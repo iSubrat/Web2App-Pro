@@ -25,7 +25,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xhavi_sz_ml_k_819"
+        applicationId "com.appcollection.xgoogle820"
         minSdkVersion 22
         targetSdkVersion 34
         versionCode 1
