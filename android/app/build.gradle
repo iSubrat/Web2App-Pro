@@ -25,11 +25,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.bec.becindia"
+        applicationId "com.appcollection.xfitfusion_846"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 5
+        versionName "1.0.5"
         multiDexEnabled true
     }
 
