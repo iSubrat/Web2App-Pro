@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmoitinho_gas_e_agua867"
+        applicationId "com.appcollection.xmoitinho_pedidos868"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
