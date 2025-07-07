@@ -26,11 +26,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.in"
+        applicationId "com.appcollection.xthronixpro111"
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
