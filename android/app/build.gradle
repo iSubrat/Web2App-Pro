@@ -26,11 +26,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xthronixpro111"
+        applicationId "com.faucetpay.myapp"
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 4
-        versionName "1.0.4"
+        versionCode 1
+        versionName "1.0.1"
         multiDexEnabled true
     }
 
