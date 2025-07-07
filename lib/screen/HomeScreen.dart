@@ -85,6 +85,23 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     loadInterstitialAds();
   }
 
+  List<String> externalSchemesOrDomains = [];
+  Future<void> fetchExternalSchemes() async {
+    try {
+      final response = await HttpClient().getUrl(Uri.parse(BASE_URL+'/upload/mightyweb.json'));
+      final result = await response.close();
+      final responseBody = await result.transform(utf8.decoder).join();
+  
+      final data = jsonDecode(responseBody);
+      setState(() {
+        externalSchemesOrDomains = List<String>.from(data['externalSchemesOrDomains']);
+      });
+    } catch (e) {
+      print("Error fetching schemes: $e");
+    }
+  }
+
+
   Future<bool> checkPermission() async {
     if (Platform.isAndroid) {
       final status = await Permission.storage.status;
@@ -372,7 +389,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           await StoreRedirect.redirect(androidAppId: id);
                           return NavigationActionPolicy.CANCEL;
                         }
-                } else if (externalSchemesOrDomains.any((element) => url.contains(element))) {
+                        } else if (externalSchemesOrDomains.any((element) => url.contains(element))) {
                         if (url.contains("https://api.whatsapp.com/send?phone=+")) {
                           url = url.replaceAll("https://api.whatsapp.com/send?phone=+", "https://api.whatsapp.com/send?phone=");
                         } else if (url.contains("whatsapp://send/?phone=%20")) {
