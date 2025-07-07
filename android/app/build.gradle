@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.faucetpay.myapp"
+        applicationId "com.appcollection.xmo_admin_panel873"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
