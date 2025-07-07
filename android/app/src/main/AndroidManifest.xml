@@ -23,10 +23,15 @@
     <uses-permission android:name="android.permission.VIDEO_CAPTURE" />
     <uses-permission android:name="android.permission.AUDIO_CAPTURE" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="Mallu Online"
+        android:label="Mighty Web"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
@@ -82,6 +87,16 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
+        <service
+            android:name="com.mighty.web.AudioService"
+            android:enabled="true"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="false" />
+
+        <service
+            android:name="com.pichillilorenzo.flutter_inappwebview.services.AudioService"
+            android:enabled="true"
+            android:exported="false" />
 
 <!--        <provider-->
 <!--            android:name="com.pichillilorenzo.flutter_inappwebview.InAppWebViewFileProvider"-->

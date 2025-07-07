@@ -115,6 +115,8 @@ Future<model.MainResponse> fetchData() async {
         }
         if (mModel.appconfiguration!.disableFooter != null) {
           await setValue(DISABLE_FOOTER, mModel.appconfiguration!.disableFooter);
+        } if (mModel.appconfiguration!.disableLeftIcon != null) {
+          await setValue(DISABLE_LEFT_ICON, mModel.appconfiguration!.disableLeftIcon);
         }
       }
 

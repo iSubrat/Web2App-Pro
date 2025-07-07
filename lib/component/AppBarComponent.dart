@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import '../component/TabBarComponent.dart';
 import '../main.dart';
@@ -32,7 +31,6 @@ class AppBarComponentState extends State<AppBarComponent> {
   }
 
   init() async {
-    //
     Iterable mRight = jsonDecode(getStringAsync(RIGHTICON));
     mRightIconList = mRight.map((model) => Righticon.fromJson(model)).toList();
 
@@ -49,14 +47,74 @@ class AppBarComponentState extends State<AppBarComponent> {
     if (getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_SIDE_DRAWER ||
         getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION_SIDE_DRAWER ||
         getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_SIDE_DRAWER_TABS) {
-      return IconButton(
-        icon: Icon(Icons.menu_rounded,color: Colors.white),
-        onPressed: () => Scaffold.of(context).openDrawer(),
+      return Row(
+        children: [
+          IconButton(
+            icon: Icon(Icons.menu_rounded, color: Colors.white),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ).expand(),
+          if (getStringAsync(DISABLE_LEFT_ICON) == "false")
+             ListView.builder(
+              itemCount: mLeftIconList.length,
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              padding: EdgeInsets.only(right: 6),
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                Lefticon mLeftIconModel = mLeftIconList[index];
+                return setLeftIcon(mLeftIconModel).visible(mLeftIconModel.status == "1").onTap(() {
+                  log("================================Icon");
+                  if (mLeftIconModel.type == "event") {
+                    log("================================left ");
+                    if (mLeftIconModel.value == LEFT_ICON_BACK_1) {
+                      widget.onTap!.call(LEFT_ICON_BACK_1);
+                    } else if (mLeftIconModel.value == LEFT_ICON_BACK_2) {
+                      widget.onTap!.call(LEFT_ICON_BACK_2);
+                    } else if (mLeftIconModel.value == LEFT_ICON_HOME) {
+                      widget.onTap!.call(LEFT_ICON_HOME);
+                    } else if (mLeftIconModel.value == LEFT_ICON_CLOSE) {
+                      widget.onTap!.call(LEFT_ICON_CLOSE);
+                    }
+                  } else {
+                    WebScreen(mHeading: mLeftIconModel.title, mInitialUrl: mLeftIconModel.url).launch(context);
+                  }
+                });
+              },
+            ).expand()
+        ],
       );
     } else if (getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_TAB_BAR ||
         getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION ||
         getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_SIDE_DRAWER_TABS) {
-      return SizedBox();
+      if (getStringAsync(DISABLE_LEFT_ICON) == "false") {
+        return ListView.builder(
+          itemCount: mLeftIconList.length,
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          padding: EdgeInsets.only(right: 6),
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            Lefticon mLeftIconModel = mLeftIconList[index];
+            return setLeftIcon(mLeftIconModel).visible(mLeftIconModel.status == "1").onTap(() {
+              if (mLeftIconModel.type == "event") {
+                if (mLeftIconModel.value == LEFT_ICON_BACK_1) {
+                  widget.onTap!.call(LEFT_ICON_BACK_1);
+                } else if (mLeftIconModel.value == LEFT_ICON_BACK_2) {
+                  widget.onTap!.call(LEFT_ICON_BACK_2);
+                } else if (mLeftIconModel.value == LEFT_ICON_HOME) {
+                  widget.onTap!.call(LEFT_ICON_HOME);
+                } else if (mLeftIconModel.value == LEFT_ICON_CLOSE) {
+                  widget.onTap!.call(LEFT_ICON_CLOSE);
+                }
+              } else {
+                WebScreen(mHeading: mLeftIconModel.title, mInitialUrl: mLeftIconModel.url).launch(context);
+              }
+            });
+          },
+        );
+      } else {
+        return SizedBox();
+      }
     } else {
       if (mLeftIconList.isNotEmpty) {
         return ListView.builder(
@@ -92,9 +150,9 @@ class AppBarComponentState extends State<AppBarComponent> {
 
   double leadingWidthWidget() {
     if (getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_TAB_BAR || getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION) {
-      return 16;
+      return getStringAsync(HEADERSTYLE) == HEADER_STYLE_CENTER || getStringAsync(HEADERSTYLE) == HEADER_STYLE_LEFT ? 50 : getStringAsync(DISABLE_LEFT_ICON) == "false"?50:0;
     } else {
-      return 50;
+      return 70;
     }
   }
 
@@ -118,7 +176,11 @@ class AppBarComponentState extends State<AppBarComponent> {
         ),
       ).visible(getStringAsync(THEME_STYLE) == THEME_STYLE_GRADIENT),
       leading: mAppBarLeft(),
-      titleSpacing: 0,
+      titleSpacing: getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_SIDE_DRAWER ||
+              getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION_SIDE_DRAWER ||
+              getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_SIDE_DRAWER_TABS
+          ? 16
+          : 0,
       automaticallyImplyLeading: true,
       bottom: getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_TAB_BAR || getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_SIDE_DRAWER_TABS && appStore.mTabList.length != 0
           ? PreferredSize(preferredSize: Size.fromHeight(20.0), child: TabBarComponent())

@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import '../screen/DashboardScreen.dart';
 import '../utils/colors.dart';
@@ -36,18 +36,26 @@ class WebScreenState extends State<WebScreen> {
   PullToRefreshController? pullToRefreshController;
 
   InAppWebViewSettings options = InAppWebViewSettings(
-    useShouldOverrideUrlLoading: true,
-    userAgent: getStringAsync(USER_AGENT),
-    mediaPlaybackRequiresUserGesture: false,
-    allowFileAccessFromFileURLs: true,
-    useOnDownloadStart: true,
-    javaScriptEnabled: getStringAsync(IS_JAVASCRIPT_ENABLE) == "true" ? true : false,
-    javaScriptCanOpenWindowsAutomatically: true,
-    supportZoom: getStringAsync(IS_ZOOM_FUNCTIONALITY) == "true" ? true : false,
-    incognito: getStringAsync(IS_COOKIE) == "true" ? true : false,
-    useHybridComposition: true,
-    allowsInlineMediaPlayback: true,transparentBackground: true
+      // crossPlatform: InAppWebViewOptions(
+          useShouldOverrideUrlLoading: true,
+          allowBackgroundAudioPlaying: true,
+          userAgent: getStringAsync(USER_AGENT),
+    allowsAirPlayForMediaPlayback: true,
+          mediaPlaybackRequiresUserGesture: false,
+          allowFileAccessFromFileURLs: true,
+          useOnDownloadStart: true,
+          javaScriptEnabled: getStringAsync(IS_JAVASCRIPT_ENABLE) == "true" ? true : false,
+          javaScriptCanOpenWindowsAutomatically: true,
+          supportZoom: getStringAsync(IS_ZOOM_FUNCTIONALITY) == "true" ? true : false,
+          incognito: getStringAsync(IS_COOKIE) == "true" ? true : false,
+          transparentBackground: true,
+        useHybridComposition: true,
+
+
+        allowsInlineMediaPlayback: true,
   );
+
+  String? pageTitle;
 
   final GlobalKey webViewKey = GlobalKey();
   InAppWebViewController? webViewController;
@@ -55,7 +63,6 @@ class WebScreenState extends State<WebScreen> {
   @override
   void initState() {
     super.initState();
-    fetchExternalSchemes(); // 👈 Fetch list from JSON
     init();
   }
 
@@ -87,22 +94,6 @@ class WebScreenState extends State<WebScreen> {
       }
     });
     setState(() {});
-  }
-
-  List<String> externalSchemesOrDomains = [];
-  Future<void> fetchExternalSchemes() async {
-    try {
-      final response = await HttpClient().getUrl(Uri.parse(BASE_URL+'/upload/mightyweb.json'));
-      final result = await response.close();
-      final responseBody = await result.transform(utf8.decoder).join();
-  
-      final data = jsonDecode(responseBody);
-      setState(() {
-        externalSchemesOrDomains = List<String>.from(data['externalSchemesOrDomains']);
-      });
-    } catch (e) {
-      print("Error fetching schemes: $e");
-    }
   }
 
   Future<bool> checkPermission() async {
@@ -139,8 +130,12 @@ class WebScreenState extends State<WebScreen> {
       webViewController!.goBack();
       return false;
     } else {
-      Navigator.pop(context);
-      if (widget.isQrScan == true) DashBoardScreen().launch(context);
+      counterShowInterstitialAd();
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => DashBoardScreen()),
+            (route) => false,
+      );
       return true;
     }
   }
@@ -171,15 +166,18 @@ class WebScreenState extends State<WebScreen> {
               _exitApp();
             },
           ),
-          title: Text(widget.mHeading!, style: boldTextStyle(color: white)),
+          title: Text(
+            widget.mHeading.validate().isNotEmpty ? widget.mHeading.validate() : pageTitle.validate(),
+            style: boldTextStyle(color: white),
+          ),
         ),
-        bottomNavigationBar: getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION ? SizedBox() : showBannerAds(),
+        bottomNavigationBar: getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION ? SizedBox.shrink() : showBannerAds(),
         body: Stack(
           children: [
             InAppWebView(
               key: webViewKey,
-              initialUrlRequest: URLRequest(url: WebUri.uri(Uri.parse(widget.mInitialUrl == null ? 'https://www.google.com' : widget.mInitialUrl!))),
-              initialSettings: options,
+              initialUrlRequest: URLRequest(url: WebUri(widget.mInitialUrl == null ? 'https://www.google.com' : widget.mInitialUrl!)),
+                initialSettings: options,
               pullToRefreshController: pullToRefreshController,
               onWebViewCreated: (controller) {
                 webViewController = controller;
@@ -196,8 +194,27 @@ class WebScreenState extends State<WebScreen> {
                   setState(() {});
                 }
               },
+              onEnterFullscreen: (controller) {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.landscapeRight,
+                  DeviceOrientation.landscapeLeft,
+                ]);
+              },
+              onExitFullscreen: (controller) {
+                SystemChrome.setPreferredOrientations([
+                  DeviceOrientation.portraitUp,
+                  DeviceOrientation.portraitDown,
+                ]);
+              },
               onLoadStop: (controller, url) async {
                 log("onLoadStop");
+                if (widget.mHeading.validate().isEmpty) {
+                  String? title = await controller.getTitle();
+                  setState(() {
+                    pageTitle = title;
+                  });
+                }
+
                 if (getStringAsync(IS_LOADER) == "true") appStore.setLoading(false);
                 if (getStringAsync(DISABLE_HEADER) == "true") {
                   webViewController!
@@ -205,6 +222,7 @@ class WebScreenState extends State<WebScreen> {
                       .then((value) => debugPrint('Page finished loading Javascript'))
                       .catchError((onError) => debugPrint('$onError'));
                 }
+
                 if (getStringAsync(DISABLE_FOOTER) == "true") {
                   webViewController!
                       .evaluateJavascript(source: "javascript:(function() { " + "var footer = document.getElementsByTagName('footer')[0];" + "footer.parentNode.removeChild(footer);" + "})()")
@@ -214,7 +232,7 @@ class WebScreenState extends State<WebScreen> {
                 pullToRefreshController!.endRefreshing();
                 setState(() {});
               },
-              onReceivedError:(controller, request, error) {
+              onReceivedError: (InAppWebViewController controller, WebResourceRequest request, WebResourceError error) {
                 log("onLoadError");
                 if (getStringAsync(IS_LOADER) == "true") appStore.setLoading(false);
                 setState(() {});
@@ -223,9 +241,10 @@ class WebScreenState extends State<WebScreen> {
               shouldOverrideUrlLoading: (controller, navigationAction) async {
                 var uri = navigationAction.request.url;
                 var url = navigationAction.request.url.toString();
-                // final List<String> externalSchemesOrDomains = ["linkedin.com", "upi://", "market://", "whatsapp://", "truecaller://", "facebook.com", "twitter.com", "youtube.com", "pinterest.com", "snapchat.com", "instagram.com", "play.google.com", "mailto:", "tel:", "share=telegram", "pay?", "messenger.com", "https://accounts.google.com/o/oauth2/auth/oauthchooseaccount", ];
                 log("URL" + url.toString());
-
+                if (url.contains("youtube.com")) {
+                  return NavigationActionPolicy.ALLOW;
+                }
                 if (Platform.isAndroid && url.contains("intent")) {
                   if (url.contains("maps")) {
                     var mNewURL = url.replaceAll("intent://", "https://");
@@ -238,7 +257,21 @@ class WebScreenState extends State<WebScreen> {
                     await StoreRedirect.redirect(androidAppId: id);
                     return NavigationActionPolicy.CANCEL;
                   }
-                } else if (externalSchemesOrDomains.any((element) => url.contains(element))) {
+                } else if (url.contains("linkedin.com") ||
+                    url.contains("market://") ||
+                    url.contains("whatsapp://") ||
+                    url.contains("truecaller://") ||
+                    url.contains("facebook.com") ||
+                    url.contains("twitter.com") ||
+                    url.contains("youtube.com") ||
+                    url.contains("pinterest.com") ||
+                    url.contains("snapchat.com") ||
+                    url.contains("instagram.com") ||
+                    url.contains("play.google.com") ||
+                    url.contains("mailto:") ||
+                    url.contains("tel:") ||
+                    url.contains("share=telegram") ||
+                    url.contains("messenger.com")) {
                   url = Uri.encodeFull(url);
                   try {
                     if (widget.isQrScan == true) {
@@ -270,7 +303,8 @@ class WebScreenState extends State<WebScreen> {
                 await Permission.location.request();
                 return Future.value(GeolocationPermissionShowPromptResponse(origin: origin, allow: true, retain: true));
               },
-              androidOnPermissionRequest: (InAppWebViewController controller, String origin, List<String> resources) async {
+              onPermissionRequest: (InAppWebViewController controller, PermissionRequest request) async {
+                List resources = request.resources;
                 if (resources.length >= 1) {
                 } else {
                   resources.forEach((element) async {
@@ -282,7 +316,7 @@ class WebScreenState extends State<WebScreen> {
                     }
                   });
                 }
-                return PermissionRequestResponse(resources: resources, action: PermissionRequestResponseAction.GRANT);
+                return PermissionResponse(resources: request.resources, action: PermissionResponseAction.GRANT);
               },
             ).visible(isWasConnectionLoss == false),
             Container(color: Colors.white, height: context.height(), width: context.width(), child: Loaders(name: appStore.loaderValues).center()).visible(appStore.isLoading)

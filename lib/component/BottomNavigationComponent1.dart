@@ -6,8 +6,10 @@ import '../model/MainResponse.dart' as model1;
 import '../utils/AppWidget.dart';
 import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
+import '../utils/common.dart';
 
 // ignore: must_be_immutable
+//used for bottom navigation component 3
 class BottomNavigationComponent1 extends StatefulWidget {
   static String tag = '/BottomNavigationComponent1';
 
@@ -66,6 +68,7 @@ class BottomNavigationComponent1State extends State<BottomNavigationComponent1> 
               setState(() {
                 appStore.currentIndex = index;
                 appStore.setIndex(index);
+                counterShowInterstitialAd();
               });
             })
         : SizedBox();

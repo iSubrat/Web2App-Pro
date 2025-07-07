@@ -6,8 +6,10 @@ import '../model/MainResponse.dart' as model1;
 import '../utils/AppWidget.dart';
 import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
+import '../utils/common.dart';
 
 // ignore: must_be_immutable
+//used for bottom navigation component 1
 class BottomNavigationComponent3 extends StatefulWidget {
   static String tag = '/BottomNavigationComponent3';
 
@@ -48,6 +50,7 @@ class BottomNavigationComponent3State extends State<BottomNavigationComponent3> 
           appStore.currentIndex = pos;
           appStore.setIndex(pos);
           currentIndex = pos;
+          counterShowInterstitialAd();
         });
       },
       child: Container(
@@ -71,7 +74,7 @@ class BottomNavigationComponent3State extends State<BottomNavigationComponent3> 
         ? Padding(
             padding: EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 for (int i = 0; i < mBottomMenuList!.length; i++) tabItem(i, mBottomMenuList![i].image),
               ],

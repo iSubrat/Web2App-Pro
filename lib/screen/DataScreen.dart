@@ -2,19 +2,19 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import '../app_localizations.dart';
 import '../component/DeepLinkWidget.dart';
-import '../main.dart';
 import '../model/MainResponse.dart';
-import '../network/NetworkUtils.dart';
 import '../screen/DashboardScreen.dart';
 import '../screen/ErrorScreen.dart';
 import '../screen/SplashScreen.dart';
 import '../utils/bloc.dart';
 import '../utils/constant.dart';
-import '../utils/loader.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
 
 class DataScreen extends StatefulWidget {
+  final MainResponse? config;
+
+  DataScreen({required this.config});
   static String tag = '/SplashScreen';
 
   @override
@@ -34,36 +34,44 @@ class DataScreenState extends State<DataScreen> {
   Widget build(BuildContext context) {
     var appLocalization = AppLocalizations.of(context);
 
-    DeepLinkBloc _bloc = DeepLinkBloc();
     return Scaffold(
       backgroundColor: context.cardColor,
       body: Stack(
         children: [
           Provider<DeepLinkBloc>(
-            create: (context) => _bloc,
+            create: (context) => DeepLinkBloc(),
             dispose: (context, bloc) => bloc.dispose(),
             child: DeepLinkWidget(),
           ),
-          FutureBuilder<MainResponse>(
-            future: mainMemoizer.runOnce(() => fetchData()),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                if (snapshot.data!.toJson().isNotEmpty) {
-                  if (snapshot.data!.appconfiguration!.isSplashScreen == "true")
-                    return SplashScreen();
-                  else
-                    return DashBoardScreen();
+          Builder(
+            builder: (context) {
+              if (widget.config == null) {
+                return ErrorScreen(
+                  error: appLocalization!.translate('msg_wrong_url'),
+                );
+              }
+
+              if (widget.config!.toJson().isNotEmpty) {
+                if (widget.config!.appconfiguration!.isSplashScreen == "true") {
+                  return SplashScreen();
                 } else {
-                  return ErrorScreen(error: appLocalization!.translate('msg_add_configuration'));
+                  return DashBoardScreen();
                 }
-              } else if (snapshot.hasError) {
+              } else {
                 if (PURCHASE_CODE.isNotEmpty) {
-                  return ErrorScreen(error: (appLocalization!.translate('msg_wrong_url')!) + " " + (appLocalization.translate('lbl_or')!) + " " + appLocalization.translate('msg_add_configuration')!);
+                  return ErrorScreen(
+                    error: (appLocalization!.translate('msg_wrong_url')!) +
+                        " " +
+                        (appLocalization.translate('lbl_or')!) +
+                        " " +
+                        appLocalization.translate('msg_add_configuration')!,
+                  );
                 } else {
-                  return ErrorScreen(error: appLocalization!.translate('msg_wrong_url'));
+                  return ErrorScreen(
+                    error: appLocalization!.translate('msg_wrong_url'),
+                  );
                 }
               }
-              return Loaders(name: appStore.loaderValues).center().visible(appStore.isLoading);
             },
           ),
         ],

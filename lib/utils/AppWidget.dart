@@ -35,7 +35,7 @@ Widget placeHolderWidget({double? height, double? width, BoxFit? fit, AlignmentG
 }
 
 Widget setImage(String value) {
-  return Image.asset(value, height: 18, width: 18, color: white).paddingAll(16);
+  return Image.asset(value, height: 18, width: 18, color: white).paddingAll(8);
 }
 
 Widget setRightIcon(Righticon mRightIconModel) {

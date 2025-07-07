@@ -6,7 +6,11 @@ const PURCHASE_CODE = '';
 const BASE_URL_OFFLINE = 'https://meetmighty.com/mightyweb-public/view/getjson.php?user=$PURCHASE_CODE';
 
 //preference
-const mOneSignalID = "";
+const mOneSignalID = '';
+
+//Counter to show Interstitial Ad
+const int InterstitialTap = 3;
+int adClickCounter = 0;
 
 //AdmobId
 const adMobBannerId = "YOUR_ADMOB_BANNER_ID";
@@ -15,10 +19,10 @@ const adMobBannerIdIos = "YOUR_ADMOB_BANNER_ID_IOS";
 const adMobInterstitialIdIos = "YOUR_INTERSTITIAL_ID_IOS";
 
 // Facebook
-const FACEBOOK_KEY = 'b9f2908b-1a6b-4a5b-b862-ded7ce289e41';
-const fbBannerId = "IMG_16_9_APP_INSTALL#2312433698835503_2964944860251047";
+const FACEBOOK_KEY = '';
+const fbBannerId = "facebook_banner_id";
 const fbBannerIdIos = "";
-const fbInterstitialId = "IMG_16_9_APP_INSTALL#549167759165615_549190905829967";
+const fbInterstitialId = "facebook_interstitial_id";
 const fbInterstitialIdIos = "";
 
 const APPNAME = 'appName';
@@ -46,6 +50,8 @@ const WALK_THROUGH_STYLE = 'WALK_THROUGH_STYLE';
 const IS_Exit_POP_UP = 'IS_Exit_POP_UP';
 const DISABLE_HEADER = 'DISABLE_HEADER';
 const DISABLE_FOOTER = 'DISABLE_FOOTER';
+const DISABLE_LEFT_ICON = 'DISABLE_LEFT_ICON';
+
 
 const AD_MOB_BANNER_ID = 'admobBannerID';
 const AD_MOB_INTERSTITIAL_ID = 'admobIntentialID';
@@ -134,6 +140,7 @@ const LEFT_ICON_SEARCH = "ic_search";
 const LEFT_ICON_ADD = "ic_add";
 
 const HEADER_STYLE_CENTER = "center";
+const HEADER_STYLE_LEFT= "left";
 const HEADER_STYLE_EMPTY = "empty_header";
 
 const THEME_STYLE_GRADIENT = "Gradient";
@@ -146,6 +153,8 @@ const NAVIGATION_STYLE_FULL_SCREEN = "fullscreen";
 const NAVIGATION_STYLE_TAB_BAR = "tabs";
 const NAVIGATION_STYLE_SIDE_DRAWER_TABS = "sidedrawer_tabs";
 const NAVIGATION_STYLE_BOTTOM_NAVIGATION_SIDE_DRAWER = "sidedrawer_bottom_navigation";
+// bool isLeftIconVisible = true;
+
 
 const SIMPLE_TAB = "simple_tab";
 const TAB_WITH_ICON = "tab_with_icon";
@@ -232,6 +241,6 @@ List<String> loaderName = [
 ];
 
 // Visibility
-const EnableHome = true;
+const EnableHome = false;
 const EnableDemo = false;
 const EnableMode = true;

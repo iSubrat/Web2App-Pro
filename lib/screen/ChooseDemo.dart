@@ -48,6 +48,7 @@ class ChooseDemoState extends State<ChooseDemo> {
         backgroundColor: appStore.primaryColors,
         title: Text(appLocalization.translate('lbl_example')!, style: boldTextStyle(color: white, size: 18)),
         actions: [
+          mAppUrl.isNotEmpty?
           IconButton(
               icon: Icon(Icons.check, color: white),
               onPressed: () async {
@@ -57,7 +58,7 @@ class ChooseDemoState extends State<ChooseDemo> {
                 await setValue(DETAIL_PAGE_VARIANT1, mSubSelectIndex!);
                 Navigator.pop(context);
                 HomeScreen().launch(context);
-              })
+              }):SizedBox()
         ],
         leading: IconButton(
           icon: Icon(Icons.chevron_left_sharp, color: white),

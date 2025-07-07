@@ -109,7 +109,7 @@ class DashBoardScreenState extends State<DashBoardScreen> {
             backgroundColor: context.scaffoldBackgroundColor,
             bottomNavigationBar: getStringAsync(ADD_TYPE) != NONE
                 ? Container(
-                    height: 118,
+              height:getStringAsync(BOTTOM_NAVIGATION_STYLE) == BOTTOM_NAVIGATION_1||(getStringAsync(BOTTOM_NAVIGATION_STYLE) == BOTTOM_NAVIGATION2)? 133:141,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [showBannerAds(), Align(alignment: Alignment.bottomCenter, child: mBottomStyle())],

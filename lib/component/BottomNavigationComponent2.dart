@@ -6,8 +6,10 @@ import '../model/MainResponse.dart' as model1;
 import '../utils/BubbleBotoomBar.dart';
 import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
+import '../utils/common.dart';
 
 // ignore: must_be_immutable
+//used for bottom navigation component 2
 class BottomNavigationComponent2 extends StatefulWidget {
   static String tag = '/BottomNavigationComponent2';
 
@@ -54,6 +56,7 @@ class BottomNavigationComponent2State extends State<BottomNavigationComponent2> 
           appStore.currentIndex = index;
           appStore.setIndex(index);
           currentIndex = index;
+          counterShowInterstitialAd();
         });
       },
       hasNotch: false,

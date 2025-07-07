@@ -13,6 +13,8 @@ import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'component/NoInternetConnection.dart';
+import 'model/MainResponse.dart';
+import 'network/NetworkUtils.dart';
 import 'store/AppStore.dart';
 
 AppStore appStore = AppStore();
@@ -21,6 +23,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   HttpOverrides.global = HttpOverridesSkipCertificate();
   await initialize();
+
+  ConnectivityResult connectivityResult = await Connectivity().checkConnectivity();
+  appStore.setConnectionState(connectivityResult);
+
   appStore.setDarkMode(aIsDarkMode: getBoolAsync(isDarkModeOnPref));
   appStore.setLanguage(getStringAsync(APP_LANGUAGE, defaultValue: 'en'));
 
@@ -37,22 +43,29 @@ void main() async {
       event.notification.display();
     });
   }
-  runApp(MyApp());
+  MainResponse? config;
+  try {
+    config = await fetchData();
+  } catch (e) {
+    config = null;
+  }
+  runApp(MyApp(config: config));
 }
 
 class MyApp extends StatefulWidget {
-  MyApp();
-
+  MyApp({required this.config});
+  final MainResponse? config;
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver{
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     setStatusBarColor(appStore.primaryColors, statusBarBrightness: Brightness.light);
     _connectivitySubscription = Connectivity().onConnectivityChanged.listen((e) async {
       appStore.setConnectionState(e);
@@ -65,11 +78,19 @@ class _MyAppState extends State<MyApp> {
       }
     });
   }
-
   @override
   void dispose() {
     super.dispose();
+    WidgetsBinding.instance.removeObserver(this);
     _connectivitySubscription.cancel();
+  }
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) {
+      print("App is in background, media will continue playing");
+    } else if (state == AppLifecycleState.resumed) {
+      print("App is back in foreground");
+    }
   }
 
   @override
@@ -77,7 +98,7 @@ class _MyAppState extends State<MyApp> {
     return Observer(builder: (context) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: appStore.isNetworkAvailable ? DataScreen() : NoInternetConnection(),
+        home: appStore.isNetworkAvailable ? DataScreen(config: widget.config) : NoInternetConnection(),
         supportedLocales: Language.languagesLocale(),
         navigatorKey: navigatorKey,
         localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],

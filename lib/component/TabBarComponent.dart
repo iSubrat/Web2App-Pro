@@ -4,6 +4,7 @@ import '../model/MainResponse.dart';
 import '../utils/AppWidget.dart';
 import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
+import '../utils/common.dart';
 
 class TabBarComponent extends StatefulWidget {
   static String tag = '/TabBarComponent';
@@ -40,7 +41,12 @@ class TabBarComponentState extends State<TabBarComponent> {
       indicatorColor: white,
       labelColor: white,
       labelStyle: primaryTextStyle(),
-      unselectedLabelStyle: secondaryTextStyle(size: 16),
+      unselectedLabelStyle: secondaryTextStyle(size: 16,color: Colors.white),
+      onTap: (value) {
+        mTabIndex = value;
+        setState(() {});
+        counterShowInterstitialAd();
+      },
       tabs: [for (int i = 0; i < mTabList.length; i++) Tab(text: mTabList[i].title)],
     );
   }
@@ -51,6 +57,7 @@ class TabBarComponentState extends State<TabBarComponent> {
       onTap: (value) {
         mTabIndex = value;
         setState(() {});
+        counterShowInterstitialAd();
       },
       tabs: [
         for (int i = 0; i < mTabList.length; i++) Tab(icon: cachedImage(mTabList[i].image, color: mTabIndex == i ? white : Colors.grey.shade500, height: 20, width: 20)),
@@ -66,6 +73,7 @@ class TabBarComponentState extends State<TabBarComponent> {
       onTap: (value) {
         mTabIndex = value;
         setState(() {});
+        counterShowInterstitialAd();
       },
       tabs: [
         for (int i = 0; i < mTabList.length; i++)

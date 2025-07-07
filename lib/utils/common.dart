@@ -133,6 +133,16 @@ void loadInterstitialAds() {
       : SizedBox();
 }
 
+
+void counterShowInterstitialAd() {
+  adClickCounter++;
+  log("----------count--$adClickCounter");
+  if (adClickCounter >= InterstitialTap) {
+    adClickCounter = 0;
+    showInterstitialAds();
+  }
+}
+
 void showInterstitialAds() {
   getStringAsync(ADD_TYPE) != NONE
       ? getStringAsync(ADD_TYPE) == isGoogleAds

@@ -160,6 +160,7 @@ class Appconfiguration {
   String? isExitPopupScreen;
   String? disableHeader;
   String? disableFooter;
+  String? disableLeftIcon;
 
   Appconfiguration({
     this.appName,
@@ -184,6 +185,7 @@ class Appconfiguration {
     this.isExitPopupScreen,
     this.disableHeader,
     this.disableFooter,
+    this.disableLeftIcon
   });
 
   Appconfiguration.fromJson(Map<String, dynamic> json) {
@@ -209,6 +211,7 @@ class Appconfiguration {
     isExitPopupScreen = json['isExitPopupScreen'];
     disableHeader = json['disable_header'];
     disableFooter = json['disable_footer'];
+    disableLeftIcon = json['disable_left_icon'];
   }
 
   Map<String, dynamic> toJson() {
@@ -256,6 +259,8 @@ class Appconfiguration {
     }
     if (this.disableFooter != null) {
       data['disable_footer'] = this.disableFooter;
+    }  if (this.disableLeftIcon != null) {
+      data['disable_left_icon'] = this.disableLeftIcon;
     }
     return data;
   }

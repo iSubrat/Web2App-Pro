@@ -33,8 +33,8 @@ void createInterstitialAd() {
     adUnitId: kReleaseMode
         ? getInterstitialAdUnitId()!
         : Platform.isIOS
-            ? adMobInterstitialIdIos
-            : adMobInterstitialId,
+            ? getStringAsync(AD_MOB_INTERSTITIAL_ID_IOS)
+            : getStringAsync(AD_MOB_INTERSTITIAL_ID),
     request: AdRequest(),
     adLoadCallback: InterstitialAdLoadCallback(
       onAdLoaded: (InterstitialAd ad) {

@@ -4,7 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../main.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
+import 'package:html/parser.dart' as html_parser;
+import 'package:http/http.dart' as http;
 import 'WebScreen.dart';
 
 class QRScannerScreen extends StatefulWidget {
@@ -26,6 +27,23 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
     }
     controller!.resumeCamera();
   }
+
+  Future<String> _fetchWebsiteTitle(String url) async {
+    try {
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final document = html_parser.parse(response.body);
+        final title = document.querySelector('title')?.text ?? '';
+        return title.trim();
+      } else {
+        throw Exception('Failed to fetch the website.');
+      }
+    } catch (e) {
+      throw Exception('Error fetching title: $e');
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +85,20 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
         setState(() {
           result = scanData;
         });
+
+        final scannedUrl = result!.code!;
+        if (Uri.tryParse(scannedUrl)?.hasAbsolutePath ?? false) {
+          _fetchWebsiteTitle(scannedUrl).then((title) {
+            WebScreen(mInitialUrl: scannedUrl, mHeading: title, isQrScan: true).launch(context);
+            controller.stopCamera();
+          }).catchError((e) {
+            WebScreen(mInitialUrl: scannedUrl, mHeading: "Website", isQrScan: true).launch(context);
+            controller.stopCamera();
+          });
+        } else {
+          log("Invalid URL: $scannedUrl");
+          controller.stopCamera();
+        }
         if (result!.code!.contains("linkedin.com") ||
             result!.code!.contains("market://") ||
             result!.code!.contains("whatsapp://") ||
@@ -94,7 +126,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
             result!.code!.contains("about.com")) {
           log("result.code " + result!.code.toString());
 
-          WebScreen(mInitialUrl: result!.code, mHeading: '', isQrScan: true).launch(context);
+          // WebScreen(mInitialUrl: result!.code, mHeading: websiteName, isQrScan: true).launch(context);
           controller.stopCamera();
         } else {
           log(result!.code);
