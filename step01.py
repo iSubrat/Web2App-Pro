@@ -1,5 +1,5 @@
 import mysql.connector
-from PIL import Image
+from PIL import Image, ImageDraw
 import requests
 import sys
 import os
@@ -128,6 +128,29 @@ def resize_image(input_path, output_path, size):
         resized_img = img.resize(size)
         resized_img.save(output_path)
 
+def resize_image_circular(input_path, output_path, size):
+    """
+    Resize and crop an image into a circular icon with transparent background.
+
+    Args:
+        input_path (str): Path to the input image file.
+        output_path (str): Path where the output image will be saved.
+        size (tuple): (width, height) of the output image (should be square for icons).
+    """
+    with Image.open(input_path).convert("RGBA") as img:
+        # Resize the image (preserving aspect ratio, then crop to fit square)
+        img = img.resize(size, Image.LANCZOS)
+
+        # Create a same-size mask with a white circle
+        mask = Image.new('L', size, 0)
+        draw = ImageDraw.Draw(mask)
+        draw.ellipse([(0, 0), size], fill=255)
+
+        # Apply mask to image (make outside transparent)
+        output = Image.new("RGBA", size)
+        output.paste(img, (0, 0), mask=mask)
+        output.save(output_path, format='PNG')
+
 def generate_resized_images(original_image_path):
     sizes = {
         "hdpi": (72, 72),
@@ -143,6 +166,8 @@ def generate_resized_images(original_image_path):
             os.makedirs(output_folder)
         output_path = os.path.join(output_folder, "ic_launcher.png")
         resize_image(original_image_path, output_path, size)
+        output_path_round = os.path.join(output_folder, "ic_launcher_round.png")
+        resize_image_circular(original_image_path, output_path_round, size)
         print(f"Generated {density} image: {output_path}")
 
 def download_image(url, filename):
