@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xmoitinho_pedidos869"
+        applicationId "com.takaverse.app"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1

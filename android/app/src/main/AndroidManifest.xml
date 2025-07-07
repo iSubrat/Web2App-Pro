@@ -31,7 +31,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="Moitinho pedidos"
+        android:label="Super Private"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
