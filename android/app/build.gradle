@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.sriai.app"
+        applicationId "com.appcollection.xmallu_online861"
         minSdkVersion 23
         targetSdkVersion 35
         versionCode 1
