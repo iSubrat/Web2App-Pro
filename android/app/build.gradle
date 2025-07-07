@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rich.tixtia"
+        applicationId "com.appcollection.xtixtia361"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 3
