@@ -130,25 +130,27 @@ def resize_image(input_path, output_path, size):
 
 def resize_image_circular(input_path, output_path, size):
     """
-    Resize and crop an image into a circular icon with transparent background.
-
-    Args:
-        input_path (str): Path to the input image file.
-        output_path (str): Path where the output image will be saved.
-        size (tuple): (width, height) of the output image (should be square for icons).
+    Resize and crop any image to a perfect circular icon with a transparent background.
+    The input image will be center-cropped to a square first, then resized, then masked as a circle.
     """
     with Image.open(input_path).convert("RGBA") as img:
-        # Resize the image (preserving aspect ratio, then crop to fit square)
+        # Center-crop to square
+        min_dim = min(img.size)
+        left = (img.width - min_dim) // 2
+        top = (img.height - min_dim) // 2
+        right = left + min_dim
+        bottom = top + min_dim
+        img = img.crop((left, top, right, bottom))
         img = img.resize(size, Image.LANCZOS)
 
-        # Create a same-size mask with a white circle
+        # Create a circular mask
         mask = Image.new('L', size, 0)
         draw = ImageDraw.Draw(mask)
-        draw.ellipse([(0, 0), size], fill=255)
+        draw.ellipse((0, 0, size[0], size[1]), fill=255)
 
-        # Apply mask to image (make outside transparent)
-        output = Image.new("RGBA", size)
-        output.paste(img, (0, 0), mask=mask)
+        # Apply mask
+        output = Image.new('RGBA', size, (0, 0, 0, 0))
+        output.paste(img, (0, 0), mask)
         output.save(output_path, format='PNG')
 
 def generate_resized_images(original_image_path):
