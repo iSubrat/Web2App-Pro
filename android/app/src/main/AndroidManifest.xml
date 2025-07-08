@@ -31,7 +31,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="RichMens DataHub "
+        android:label="Onworks"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
