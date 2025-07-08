@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xulab_soft881"
+        applicationId "com.zlibrary.myapp"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
