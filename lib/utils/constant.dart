@@ -1,12 +1,12 @@
 //With PHP backend
-const BASE_URL = "https://web2app-pro.appcollection.in/profiles/876";
+const BASE_URL = "https://web2app-pro.appcollection.in/profiles/877";
 
 //without PHP backend
 const PURCHASE_CODE = '';
 const BASE_URL_OFFLINE = 'https://meetmighty.com/mightyweb-public/view/getjson.php?user=$PURCHASE_CODE';
 
 //preference
-const mOneSignalID = "ac1729e8-f0f5-43c0-a757-f1ef63c69f54";
+const mOneSignalID = "";
 
 //Counter to show Interstitial Ad
 const int InterstitialTap = 3;
