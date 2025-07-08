@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xstl_teller_uat465"
+        applicationId "com.appcollection.xstl_v2887"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
