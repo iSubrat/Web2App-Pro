@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xonworks893"
+        applicationId "com.dduxrh.com"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
