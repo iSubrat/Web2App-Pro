@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xstl_v2887"
+        applicationId "com.appcollection.xponto_digital_amazonia_inter888"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
