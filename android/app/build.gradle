@@ -26,11 +26,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.web2app"
+        applicationId "com.appcollection.isync_contacts"
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 7
-        versionName "1.0.7"
+        versionCode 23
+        versionName "1.0.23"
         multiDexEnabled true
     }
 
