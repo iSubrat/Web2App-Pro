@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xkrishna_diagnostic_144"
+        applicationId "com.appcollection.xcek_bansos309"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
