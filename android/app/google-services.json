@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1050935885001",
-    "project_id": "web2app-free",
-    "storage_bucket": "web2app-free.firebasestorage.app"
+    "project_number": "100848808492",
+    "project_id": "isync-free",
+    "storage_bucket": "isync-free.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1050935885001:android:b7c09c15e7f61048192118",
+        "mobilesdk_app_id": "1:100848808492:android:bdc31a04f685ef8f3ad789",
         "android_client_info": {
-          "package_name": "com.appcollection.web2app"
+          "package_name": "com.appcollection.isync_contacts"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBNjGBlzT4V_h4Ea_riLRCoRnAhQwyTySk"
+          "current_key": "AIzaSyADKGXjkH4waEySrzRjjM3STVkPhN9ZQvA"
         }
       ],
       "services": {
