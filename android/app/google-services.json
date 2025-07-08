@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "637648671617",
-    "project_id": "mighty-web",
-    "storage_bucket": "mighty-web.appspot.com"
+    "project_number": "1050935885001",
+    "project_id": "web2app-free",
+    "storage_bucket": "web2app-free.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:637648671617:android:ad631e5c99f01c0fee0e80",
+        "mobilesdk_app_id": "1:1050935885001:android:b7c09c15e7f61048192118",
         "android_client_info": {
           "package_name": "com.appcollection.web2app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "637648671617-i9f0melsahvit7pocc2veg9bffsob0h9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAKArlHtd0Jxo9BPB6N_tHAi5Y0m8nmeYw"
+          "current_key": "AIzaSyBNjGBlzT4V_h4Ea_riLRCoRnAhQwyTySk"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "637648671617-i9f0melsahvit7pocc2veg9bffsob0h9.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "637648671617-b869llovsc1amje80q9p2vr4igbs16j4.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mighty.web"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
