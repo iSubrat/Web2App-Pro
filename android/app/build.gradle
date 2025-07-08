@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xponto_digital_amazonia_inter888"
+        applicationId "com.appcollection.xrichmens_datahub_889"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
