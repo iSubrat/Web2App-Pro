@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xstl_teller_v_02890"
+        applicationId "com.appcollection.xrichmens_datahub_892"
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 1
