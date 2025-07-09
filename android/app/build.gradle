@@ -26,11 +26,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appcollection.xtest_app886"
+        applicationId "com.appcollection.xfikfap_903"
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 100
+        versionName "1.0.100"
         multiDexEnabled true
     }
 
